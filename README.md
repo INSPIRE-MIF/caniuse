@@ -11,6 +11,10 @@ We will test several applications, including but not limited to:
 * Safe Software FME
 * wetransform hale studio
 
+We are specifically testing for a wide range of features and how they are supported. The list of features and their definition can be found here:
+
+[List of Tests](./testDocumentation.md)
+
 ### Community Contributions
 
 If you would like to add information for any other software or update existing information for a new version of a software, please let us know.
