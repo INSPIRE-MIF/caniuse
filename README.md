@@ -1,37 +1,20 @@
-## Welcome to GitHub Pages
+## Welcome to CanIUse INSPIRE
 
-You can use the [editor on GitHub](https://github.com/INSPIRE-MIF/caniuse/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+In this repository we document which features of INSPIRE GML and any alternative encodings (such as the GeoJSON encoding currently under development) can be used in which software. This repository is created as part of the MIG 2017.3 work to improve INSPIRE Data Interoperability.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+We will test several applications, including but not limited to:
 
-### Markdown
+* Esri ArcMap
+* QGIS
+* OpenLayers
+* Leaflet
+* Safe Software FME
+* wetransform hale studio
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Community Contributions
 
-```markdown
-Syntax highlighted code block
+If you would like to add information for any other software or update existing information for a new version of a software, please let us know.
 
-# Header 1
-## Header 2
-### Header 3
+### License
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/INSPIRE-MIF/caniuse/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The documentation in this repository is made available using the EUPL 2.0 license.
