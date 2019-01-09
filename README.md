@@ -4,11 +4,11 @@ In this repository we document which features of INSPIRE GML and any alternative
 
 We will test several client applications, including but not limited to:
 
+* QGIS 2.18 and QGIS 3.4  
 * Esri ArcMap 10.5
 * Esri ArcGIS Online
-* QGIS 2.18 and QGIS 3.4 
 * OpenLayers 3
-* Leaflet 1.4.0
+* Leaflet 1.4
 * GDAL/OGR
 * Safe Software FME
 * wetransform hale studio
