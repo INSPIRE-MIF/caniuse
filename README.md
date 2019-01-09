@@ -15,8 +15,8 @@ We will test several client applications, including but not limited to:
 
 We are specifically testing for a wide range of features and how they are supported. The list of features and their definition can be found here:
 
-[GeoJSON tests](docs/geoJSON.md)
-[GML tests](docs/gml.md)
+* [GeoJSON tests](docs/geoJSON.md)
+* [GML tests](docs/gml.md)
 
 ### Community Contributions
 
