@@ -9,7 +9,7 @@ We will test several client applications, including but not limited to:
 * Esri ArcGIS Online
 * OpenLayers 3
 * Leaflet 1.4
-* GDAL/OGR
+* OGR
 * Safe Software FME
 * wetransform hale studio
 
