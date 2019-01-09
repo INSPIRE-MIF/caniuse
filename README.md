@@ -1,13 +1,13 @@
 ## Welcome to CanIUse INSPIRE
 
-In this repository we document which features of INSPIRE GML and any alternative encodings (such as the GeoJSON encoding currently under development) can be used in which software. This repository is created as part of the MIG 2017.3 work to improve INSPIRE Data Usability.
+In this repository we document which features of INSPIRE GML and any alternative encodings (such as the GeoJSON encoding currently under development) can be used in which software product. This repository is created as part of the MIG 2017.3 work to improve the usability of INSPIRE Data.
 
 We will test several client applications, including but not limited to:
 
 * Esri ArcMap 10.5
 * QGIS 3.4
 * OpenLayers 3
-* Leaflet
+* Leaflet 1.4.0
 * GDAL/OGR
 * Safe Software FME
 * wetransform hale studio
