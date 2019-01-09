@@ -1,1 +1,1 @@
-GML test to be provided here
+# Documentation of GeoJSON Tests
