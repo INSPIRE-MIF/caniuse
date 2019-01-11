@@ -1,4 +1,4 @@
-# Documentation of GeoJSON and GML Tests
+# Documentation of GeoJSON Tests
 
 This document describes the tests being performed to assess usability of INSPIRE data in various encodings. The tests are specific to each encoding.
 
@@ -232,7 +232,3 @@ Test IDs:
 * `geojson_extension_crs_epsg4258`
 * `geojson_extension_crs_epsg3857`
 * `geojson_extension_crs_epsg25832`
-
-## GML
-
-TBD (Stefania Morrone)
