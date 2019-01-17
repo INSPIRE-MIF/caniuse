@@ -77,8 +77,7 @@ Test if the client can interpret axis order correctly when the http encoding is 
 
 Test IDs:
 
-* `gml_crs_epsg3035_http`
-* `gml_crs_epsg4258_http`
+* `gml_crs_http_encoding`
 
 
 ### 3D coordinates
@@ -158,5 +157,5 @@ Tests if the links can be resolved
 
 Test IDs:
 
-* `gml_links_resolve`
+* `gml_xlinks_resolve`
 
