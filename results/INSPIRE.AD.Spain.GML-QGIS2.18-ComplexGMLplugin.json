@@ -1,0 +1,123 @@
+{
+    "software": "QGIS",
+    "version": "2.8.14",
+    "notes":"test makes use of the 'Complex GML info' plugin",
+    "results": {
+        "gml": {
+            "gml_file_load": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+            "gml_file_display": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+	    "gml_features_edit": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+              "gml_features_create": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+            "gml_geometry_load": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+             "gml_geometry_display": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+            "gml_complex_property_load": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+            "gml_complex_property_display": {
+                "result": "Not Supported",
+                "notes": "in the Complex GML info pop up window, all complex properties are correctly shown, except for the 'ad:position' which is not visible and neither are its subfields (specification,method,default)",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+            "gml_complex_property_style": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+             "gml_complex_property_processing": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+            "gml_multiple_occurrences_load": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+           "gml_multiple_occurrences_display": {
+                "result": "Supported",
+                "notes": "ONLY in the Complex GML info pop up - the ad:component, in this data set, has 3 occurrences and these are all correctly displayed",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+         "gml_multiple_occurrences_style": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+             "gml_multiple_occurrences_processing": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            }, 
+             "gml_xnil_load": {
+                "result": "Supported",
+                "notes": "ONLY in the Complex GML info pop up",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+           "gml_xnil_display": {
+                "result": "Supported",
+                "notes": "visible ONLY in the Complex GML info pop up",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+             "gml_nilreason_load": {
+                "result": "Supported",
+                "notes": " ONLY in the Complex GNL info pop up",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+           "gml_nilreason_display": {
+                "result": "Supported",
+                "notes": "visible ONLY in the Complex GNL info pop up",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            },
+             "gml_xlinks_resolve": {
+                "result": "Supported",
+                "notes": "visible ONLY in the Complex GNL info pop up",
+                "dataUsed": " https://link.to/data",
+                "dateOfTest": "2019-01-17"
+            }
+        }
+    }
+}
