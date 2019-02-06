@@ -63,7 +63,7 @@ Test IDs:
 
 #### multiple geometries
 
-Test if client can display multiple geometries in the same feature type 
+Test if client can display multiple geometries in the same feature type. Tests will be performed both on examples of multiple geometries in different properties (e.g. ef:geometry and ef:representativePoint) and on examples of multiple occurrences of the same geometry property (e.g. ad:geographicPosition)
 
 Test IDs:
 
