@@ -36,7 +36,7 @@
             },
               "gml_features_create": {
               "result": "NOT Supported",
-                "notes": "",
+                "notes": "None",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-01-17"
             },       
@@ -78,14 +78,14 @@
                 "dateOfTest": "2019-01-17"
             },                        
             "gml_multiple_geometry_load": {
-                "result": "Supported",
-                "notes": "Complex GML Info plugin needed - e.g. you can read 'ef:representativePoint' coordinates in the 'Complex GML Info' form ",
+                "result": "Partially Supported",
+                "notes": "only using 'Complex GML Info plugin' pop up can see the 'ef:representativePoint'- only using 'GML Loader' plugin can see multiple occurrences of 'ad:GeographicPosition'",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-01-17"
             },
              "gml_multiple_geometry_display": {
                 "result": "Not Supported",
-                "notes": "e.g. 'ef:representativePoint' geometries are  not displayed in the map - tested also with multiple occurrences of the ad:GeographicPosition using AD.Spain_full-2geographicPositions.gml",
+                "notes": "tested also with multiple occurrences of the 'ad:GeographicPosition'",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-01-17"
             },
