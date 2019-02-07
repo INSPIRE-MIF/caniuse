@@ -1,0 +1,33 @@
+{
+    "software": "Leaflet",
+    "version": "1.4.0",
+    "notes":"No test performed. Thoroughly read relevant documentation linked through https://leafletjs.com/ ",
+    "results": {
+        "gml": {
+            "gml_file_load": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": "None",
+                "dateOfTest": "2019-02-05"
+            },
+            "gml_file_display": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": "None",
+                "dateOfTest": "2019-02-05"
+            },        
+            "gml_WFS2_load": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": "None",
+                "dateOfTest": "2019-02-05"
+            },
+            "gml_WFS2_display": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": "None",
+                "dateOfTest": "2019-02-05"
+            }
+        }
+    }
+}
