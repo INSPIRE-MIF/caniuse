@@ -24,4 +24,4 @@ If you would like to add information for any other software or update existing i
 
 ### License
 
-The documentation in this repository is made available using the EUPL 2.0 license.
+The documentation in this repository is available under the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0).
