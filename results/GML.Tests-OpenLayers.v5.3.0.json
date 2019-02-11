@@ -1,0 +1,33 @@
+{
+    "software": "OpenLayers",
+    "version": "5.3.0",
+    "notes":"'Currently only supports GML 3.1.1 Simple Features profile'.No test performed. Thoroughly read relevant documentation https://openlayers.org/en/latest/apidoc/module-ol_format_GML3-GML3.html",
+    "results": {
+        "gml": {
+            "gml_file_load": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": "None",
+                "dateOfTest": "2019-02-05"
+            },
+            "gml_file_display": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": "None",
+                "dateOfTest": "2019-02-05"
+            },        
+            "gml_WFS2_load": {
+                "result": "Not Supported",
+                "notes": "https://openlayers.org/en/latest/apidoc/module-ol_format_WFS-WFS.html",
+                "dataUsed": "None",
+                "dateOfTest": "2019-02-05"
+            },
+            "gml_WFS2_display": {
+                "result": "Not Supported",
+                "notes": "https://openlayers.org/en/latest/apidoc/module-ol_format_WFS-WFS.html",
+                "dataUsed": "None",
+                "dateOfTest": "2019-02-05"
+            }
+        }
+    }
+}

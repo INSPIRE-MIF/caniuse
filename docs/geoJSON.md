@@ -1,10 +1,53 @@
 # Documentation of GeoJSON Tests
 
-This document describes the tests being performed to assess usability of INSPIRE data in various encodings. The tests are specific to each encoding.
-
-## GeoJSON
+This document describes the tests being performed to assess usability of INSPIRE data in GeoJSON encoding. 
 
 GeoJSON is being discussed as an alternative encoding for INSPIRE data. To determine what features of GeoJSON to use in that alternative encoding, we have specified this test suite for client applications.
+
+## GeoJSON support
+
+#### Load data from file
+
+Test if the client can load and display data from a .geojson file
+
+Test IDs:
+
+* `geojson_file_load`
+* `geojson_file_display`
+
+#### Download data from WFS
+
+Test if client can load and display geojson data from a WFS 
+
+Test IDs:
+
+* `geojson_WFS_load`
+* `geojson_WFS_display`
+
+#### Edit / create features
+
+Test if client can edit/create geojson features
+
+Test IDs:
+
+* `geojson_features_edit`
+* `geojson_features_create`
+
+#### File Size
+
+Test if the client handle big file sizes
+           
+Test IDs:
+
+* `geojson_size_200m_load`        
+* `geojson_size_200m_display` 
+* `geojson_size_1000m_load`        
+* `geojson_size_1000m_display`   
+* `geojson_size_2000m_load`        
+* `geojson_size_2000m_display`
+* `geojson_size_3000m_load`        
+* `geojson_size_3000m_display`
+
 
 ### Geometry
 
@@ -76,9 +119,20 @@ Test IDs:
 * `geojson_geometry_multipolygon_display`
 * `geojson_geometry_multipolygon_large`
 
-#### Mixed-type GeometryCollections
+#### Geometry Collections
 
-Can the software load and display with mixed-type GeometryCollections? 
+Can the software load and display Geometry Collections? 
+
+Test IDs: 
+
+* `geojson_geometry_geometrycollection_load`
+* `geojson_geometry_geometrycollection_display`
+
+#### Mixed-type Geometry Collections
+
+* `geojson_geometry_mixed_geometrycollection_load`
+* `geojson_geometry_mixed_geometrycollection_display`
+
 
 #### 3D coordinates
 
@@ -89,54 +143,11 @@ Test IDs:
 * `geojson_geometry_3d_load`
 * `geojson_geometry_3d_display`
 
-Test IDs: 
 
-* `geojson_geometry_geometrycollection_load`
-* `geojson_geometry_geometrycollection_display`
-
-### Size
-
-A common issue in any file-based data exchange is when the file sizes are unamangeable. We thus test whether clients have issues with specific file sizes.
-
-#### 2MB
-
-Test to load and display a 2 MB GeoJSON file.
-
-Test IDs: 
-
-* `geojson_size_2m_load`
-* `geojson_size_2m_display`
-
-#### 20MB
-
-Test to load and display a 20 MB GeoJSON file.
-
-Test IDs: 
-
-* `geojson_size_20m_load`
-* `geojson_size_20m_display`
-
-#### 200MB
-
-Test to load and display a 200 MB GeoJSON file.
-
-Test IDs: 
-
-* `geojson_size_200m_load`
-* `geojson_size_200m_display`
-
-#### 2000MB
-
-Test to load and display a 2.000 MB GeoJSON file.
-
-Test IDs: 
-
-* `geojson_size_2000m_load`
-* `geojson_size_2000m_display`
 
 ### Property Types
 
-These tests verify whether there are issues with certain property types, e.g. whether they can be used for styling. In all these tests, we want to check whether the property is read and can then be used in styling and processing.
+These tests verify whether there are issues with certain property types, e.g. whether they can be used for styling. They check whether the property is read and can be used in styling and processing.
 
 #### Boolean
 
@@ -164,7 +175,7 @@ Test IDs:
 * `geojson_property_array_style`
 * `geojson_property_array_processing`
 
-#### Object
+####  Properties with complex data types 
 
 Does the software read and display a complex property?
 Can these be used in styling? 
@@ -172,14 +183,14 @@ Can these be used in processing/analytic tools?
 
 Test IDs: 
 
-* `geojson_property_object_load`
-* `geojson_property_object_display`
-* `geojson_property_object_style`
-* `geojson_property_object_processing`
+* `geojson_complex_property_load`
+* `geojson_complex_property_display`
+* `geojson_complex_property_style`
+* `geojson_complex_property_processing`
 
 #### References
 
-Does the software support `$ref`, as defined in the [JSON Reference Draft](https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03)? Does it resolve it?
+Does the software support `$ref`, as defined in the [JSON Reference Draft](https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03)? Can the software resolve it?
 
 Test IDs: 
 
