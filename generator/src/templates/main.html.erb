@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CanIUse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Verdana;
+      margin: 0px;
+      padding-bottom: 24px;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    table, td, th {
+      border: 1px solid #00000033;
+    }
+    td, th {
+      width: 200px;
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+    h1 {
+      font-size: 32px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    .supported {
+      background-color: #92D050;
+      cursor: pointer;
+    }
+    .not-supported {
+      background-color: #C00000;
+      color: #ffffff
+  }
+  .other {
+      background-color: #ffffff;
+    }
+    .partialy-supported {
+      background-color: #FFC000;
+      cursor: pointer;
+    }
+    .summary-box {
+      display: none;
+      width: 100%;
+    }
+    .result-table td {
+      text-align: center;
+    }
+    .result-table td:first-child {
+      text-align: left;
+    }
+    .feature-box {
+      display: block;
+    }
+    header, footer {
+      background-color: #e2e2e2;
+      width: 100%;
+      height: 76px;
+      margin: 0px;
+    }
+    footer {
+      margin-top: 50px
+    }
+    .category-box {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .filter-box {
+      height: 100%;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      vertical-align: middle;
+    }
+    #filterInput {
+      width: 500px;
+      font-size: 16px;
+      padding: 12px;
+      border: 1px solid #ddd;
+      vertical-align: middle;
+      margin-top: 15px
+    }
+    </style>
+    <script>
+      drawSummary = function(table_cell) {
+        clearSummaries();
+        if (!table_cell.getAttribute('data-result')) { return; }
+        if (table_cell.getAttribute('data-clicked')) {
+          table_cell.removeAttribute('data-clicked');
+          return;
+        }
+        var summaryField = document.getElementById(table_cell.getAttribute('data-feature') + '-summary-box');
+        summaryField.style.display = "block";
+        summaryStrings = [
+          'Result: ' +  table_cell.getAttribute('data-result'),
+          'Date of test: ' +  table_cell.getAttribute('data-date-of-test'),
+          'Used data: ' +  table_cell.getAttribute('data-used-data'),
+          'Notes: ' +  table_cell.getAttribute('data-notes')
+        ]
+        for (var i = 0; i < summaryStrings.length; i++ ) {
+          var res = document.createElement("p");
+          res.innerText = summaryStrings[i];
+          summaryField.appendChild(res);
+        }
+        table_cell.setAttribute('data-clicked', true);
+      }
+
+      clearSummaries = function(){
+        var summaries = document.getElementsByClassName("summary-box");
+        for (var i = 0; i < summaries.length; i++) {
+          summaries[i].innerHTML = "";
+          summaries[i].style.display = "none";
+        } 
+      }
+
+      applyFilter = function(){
+        var input = document.getElementById("filterInput");
+        var filterValue = input.value.toUpperCase();
+        var features = document.getElementsByClassName("feature-box");
+        for (var i = 0; i < features.length; i++) {
+          if (features[i].getAttribute('data-feature').toUpperCase().indexOf(filterValue) > -1){
+            features[i].style.display = "block";
+          } else {
+            features[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+  <header>
+    <div class="filter-box">
+      <input type="text" id="filterInput" onkeyup="applyFilter()" placeholder="Search for features.." title="Type in a feature name">
+    </div>
+  </header>
+  <%results.each do |category, features|%>
+    <div class="category-box">
+      <h1><%=category%></h1>
+      <%features.each do |feature, softwares|%>
+        <div class="feature-box" id="<%=feature%>-feature-box" data-feature="<%=feature%>">
+          <h2><%=feature%></h2>
+          <table class="result-table">
+            <tr>
+              <%softwares.keys.each do |software_title|%>
+              <th><%=software_title%></th>
+              <%end%>
+            </tr>
+            <%softwares[softwares.keys.first].count.times do |i|%>
+            <tr>
+              <%softwares.each do |software, versions|%>
+                <%if !versions[i]%>
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                <%else%>
+                <td class="<%={'SUPPORTED' => 'supported', 'NOT SUPPORTED' => 'not-supported'}[versions[i]['result'].upcase] || 'partialy-supported'%>"
+                    data-feature="<%=feature%>"
+                    data-result="<%=versions[i]['result']%>"
+                    data-notes="<%=versions[i]['notes']%>"
+                    data-used-data="<%=versions[i]['dataUsed']%>"
+                    data-date-of-test="<%=versions[i]['dateOfTest']%>"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  <%=versions[i]['version'] if versions[i]%>
+                </td>
+                <%end%>
+              <%end%>
+            </tr>
+            <%end%>
+          </table>
+          <div class="summary-box" id="<%=feature%>-summary-box"></div>
+        </div>
+      <%end%>
+    </div>
+  <%end%>
+  </body>
+</html>
