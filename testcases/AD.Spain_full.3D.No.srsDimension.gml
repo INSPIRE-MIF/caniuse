@@ -12,8 +12,8 @@
             <ad:position>
                 <ad:GeographicPosition>
                     <ad:geometry>
-                        <gml:Point gml:id="ES.SDGC.AD.28.900.2128.16.2006624VK4820E_P" srsDimension="3" srsName="urn:ogc:def:crs:EPSG::25830">
-                            <gml:pos>441964.1775 4480451.104 0.0</gml:pos> 
+                        <gml:Point gml:id="ES.SDGC.AD.28.900.2128.16.2006624VK4820E_P" srsName="urn:ogc:def:crs:EPSG::25830">
+                            <gml:pos>441964.1775 4480451.104 2.0</gml:pos> 
                         </gml:Point>
                     </ad:geometry>
                     <ad:specification>Entrance</ad:specification>
