@@ -73,13 +73,13 @@
             },
              "gml_mixed_geometry_display": {
                 "result": "Supported",
-                "notes": "One layer provided for each geometry type",
+                "notes": "When loaded, data are split in different layers for each geometry type",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml",
                 "dateOfTest": "2019-01-17"
             },                        
             "gml_multiple_geometry_load": {
                 "result": "Partially Supported",
-                "notes": "only using 'Complex GML Info plugin' pop up can see the 'ef:representativePoint'- only using 'GML Loader' plugin can see multiple occurrences of 'ad:GeographicPosition'",
+                "notes": "only using 'Complex GML Info plugin' pop-up can see the 'ef:representativePoint'- only using 'GML Loader' plugin can see multiple occurrences of 'ad:GeographicPosition'",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-01-17"
             },
@@ -163,19 +163,19 @@
             },
            "gml_xnil_display": {
                 "result": "Supported",
-                "notes": "need to use 'Complex GML Info' plugin",
+                "notes": "need to use the 'Complex GML Info' plugin",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-01-17"
             },
              "gml_nilreason_load": {
                 "result": "Supported",
-                "notes": "need to use 'Complex GML Info' plugin",
+                "notes": "need to use the 'Complex GML Info' plugin",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-01-17"
             },
            "gml_nilreason_display": {
                 "result": "Supported",
-                "notes": "need to use 'Complex GML Info' plugin",
+                "notes": "need to use the 'Complex GML Info' plugin",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-01-17"
             },
