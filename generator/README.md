@@ -9,5 +9,5 @@ Ruby needs to be installed.
 ## How to run
 
 ```sh
-./caniuse_generator.rb ./results > out.html
+./caniuse_generator.rb ../results > out.html
 ```
