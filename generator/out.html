@@ -1,0 +1,4167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CanIUse INSPIRE?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
+        margin: 0px;
+        padding-bottom: 24px;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      table, td, th {
+        border: 1px solid #00000033;
+      }
+      td, th {
+        width: 200px;
+        padding: 5px 10px;
+        font-size: 14px;
+      }
+      h1 {
+        font-size: 32px;
+      }
+      h2 {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+      .supported {
+        background-color: #92D050;
+        cursor: pointer;
+      }
+      .not-supported {
+        background-color: #C00000;
+        color: #ffffff
+      }
+      .partialy-supported {
+        background-color: #FFC000;
+        cursor: pointer;
+      }
+      .not-tested {
+        background-color: #FFFFFF;
+        color: #C0C0C0
+      }
+      .summary-box {
+        display: none;
+        width: 100%;
+      }
+      .result-table td {
+        text-align: center;
+      }
+      .result-table td:first-child {
+        text-align: left;
+      }
+      .feature-box {
+        display: block;
+      }
+      header, footer {
+        background-color: #000000;
+        width: 100%;
+        height: 245px;
+        margin: 0px;
+      }
+      footer {
+        margin-top: 50px
+      }
+      .category-box {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .filter-box {
+        height: 100%;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        vertical-align: middle;
+      }
+      #filterInput {
+        width: 500px;
+        font-size: 16px;
+        padding: 12px;
+        border: 1px solid #ddd;
+        vertical-align: middle;
+        margin-top: 15px
+      }
+    </style>
+    <script>
+      drawSummary = function(table_cell) {
+        clearSummaries();
+        if (!table_cell.getAttribute('data-result')) { return; }
+        if (table_cell.getAttribute('data-clicked')) {
+          table_cell.removeAttribute('data-clicked');
+          return;
+        }
+        var summaryField = document.getElementById(table_cell.getAttribute('data-feature') + '-summary-box');
+        summaryField.style.display = "block";
+        summaryStrings = [
+          'Result: ' +  table_cell.getAttribute('data-result'),
+          'Date of test: ' +  table_cell.getAttribute('data-date-of-test'),
+          'Used data: ' +  table_cell.getAttribute('data-used-data'),
+          'Notes: ' +  table_cell.getAttribute('data-notes')
+        ]
+        for (var i = 0; i < summaryStrings.length; i++ ) {
+          var res = document.createElement("p");
+          res.innerText = summaryStrings[i];
+          summaryField.appendChild(res);
+        }
+        table_cell.setAttribute('data-clicked', true);
+      }
+
+      clearSummaries = function(){
+        var summaries = document.getElementsByClassName("summary-box");
+        for (var i = 0; i < summaries.length; i++) {
+          summaries[i].innerHTML = "";
+          summaries[i].style.display = "none";
+        } 
+      }
+
+      applyFilter = function(){
+        var input = document.getElementById("filterInput");
+        var filterValue = input.value.toUpperCase();
+        var features = document.getElementsByClassName("feature-box");
+        for (var i = 0; i < features.length; i++) {
+          if (features[i].getAttribute('data-feature').toUpperCase().indexOf(filterValue) > -1){
+            features[i].style.display = "block";
+          } else {
+            features[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+  <header>
+    <div class="filter-box">
+      <input type="text" id="filterInput" onkeyup="applyFilter()" placeholder="Search for features.." title="Type in a feature name">
+    </div>
+  </header>
+  
+    <div class="category-box">
+      <h1>gml</h1>
+      
+        <div class="feature-box" id="gml_file_load-feature-box" data-feature="gml_file_load">
+          <h2>gml_file_load</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_file_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_file_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_file_load"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-05"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  December 2018 update
+                </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_file_load"
+                    data-result="Supported"
+                    data-notes="you have to import the dataset source schema first, then upload data from a gml instance"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_file_load"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="None"
+                    data-date-of-test="2019-02-05"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  5.3.0
+                </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_file_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_file_load"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="None"
+                    data-date-of-test="2019-02-05"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  1.4.0
+                </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_file_load-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_file_display-feature-box" data-feature="gml_file_display">
+          <h2>gml_file_display</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_file_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_file_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_file_display"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-05"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  December 2018 update
+                </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_file_display"
+                    data-result="Supported"
+                    data-notes="Map perspective + Data perspective"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_file_display"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="None"
+                    data-date-of-test="2019-02-05"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  5.3.0
+                </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_file_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_file_display"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="None"
+                    data-date-of-test="2019-02-05"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  1.4.0
+                </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_file_display-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_WFS2_load-feature-box" data-feature="gml_WFS2_load">
+          <h2>gml_WFS2_load</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_WFS2_load"
+                    data-result="Supported"
+                    data-notes="need to use 'WFS 2.0 client' plugin"
+                    data-used-data="https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_WFS2_load"
+                    data-result="Supported"
+                    data-notes="need to use the 'GML Application Schema toolbox' plugin"
+                    data-used-data="https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_WFS2_load"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100"
+                    data-date-of-test="2019-02-05"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  December 2018 update
+                </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_WFS2_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_WFS2_load"
+                    data-result="Not Supported"
+                    data-notes="https://openlayers.org/en/latest/apidoc/module-ol_format_WFS-WFS.html"
+                    data-used-data="None"
+                    data-date-of-test="2019-02-05"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  5.3.0
+                </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_WFS2_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_WFS2_load"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="None"
+                    data-date-of-test="2019-02-05"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  1.4.0
+                </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_WFS2_load-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_WFS2_display-feature-box" data-feature="gml_WFS2_display">
+          <h2>gml_WFS2_display</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_WFS2_display"
+                    data-result="Supported"
+                    data-notes="need to use 'WFS 2.0 client' plugin"
+                    data-used-data="https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_WFS2_display"
+                    data-result="Supported"
+                    data-notes="need to use the 'GML application schema toolbox' plugin"
+                    data-used-data="https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_WFS2_display"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100"
+                    data-date-of-test="2019-02-05"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  December 2018 update
+                </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_WFS2_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_WFS2_display"
+                    data-result="Not Supported"
+                    data-notes="https://openlayers.org/en/latest/apidoc/module-ol_format_WFS-WFS.html"
+                    data-used-data="None"
+                    data-date-of-test="2019-02-05"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  5.3.0
+                </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_WFS2_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_WFS2_display"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="None"
+                    data-date-of-test="2019-02-05"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  1.4.0
+                </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_WFS2_display-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_features_edit-feature-box" data-feature="gml_features_edit">
+          <h2>gml_features_edit</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_features_edit"
+                    data-result="NOT Supported"
+                    data-notes=" None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_features_edit"
+                    data-result="Partially Supported"
+                    data-notes="need to use the 'GML Application schema toolbox' plugin. There is no possibility to save edits in the source GML dataset nor to save an edited layer as a new GML dataset preserving the INSPIRE structure. The 'Load in relational mode (GMLAS)' and the 'Load from GMLAS database' options allow updating relevant DB tables (SQLite or PostgreSQL)."
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_features_edit"
+                    data-result="Partially Supported"
+                    data-notes="The gml file cannot be edited directly. A data transformation must be performed (source schema = target schema). Geometries cannot be edited in the map."
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_features_edit"
+                    data-result="Partially Supported"
+                    data-notes="GML files cannot be edited directly. A data transformation must be performed. Geometries cannot be edited directly in the data inspector."
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_features_edit-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_features_create-feature-box" data-feature="gml_features_create">
+          <h2>gml_features_create</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_features_create"
+                    data-result="NOT Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_features_create"
+                    data-result="Poorly Supported"
+                    data-notes="need to use 'GML Application schema toolbox' plugin. However, for the new geometries there is no possibility to edit the '_xml_' field nor to save edited layer as a new GML dataset preserving the INSPIRE structure(in case you use the 'Load in XML mode' option). When using the 'Load in relational mode (GMLAS)' and 'Load from GMLAS database' options, only way to insert the INSPIRE feature properties is to modify each relevant layer (i.e. DB table). This is quite complicated because with INSPIRE schemas you have tens of tables. "
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_features_create"
+                    data-result="Partially Supported"
+                    data-notes="New features can be added. Geometries anyway cannot be edited directly in HALE Studio and must be provided by other sources (e.g. importing another shapefile or calculated from geometries of already existing features)."
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_features_create"
+                    data-result="Partially Supported"
+                    data-notes="New features can be added. Geometries anyway cannot be edited directly in the data inspector and must be provided by other sources (e.g. importing another shapefile or calculated from geometries of already existing features)"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_features_create-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_size_200m_load-feature-box" data-feature="gml_size_200m_load">
+          <h2>gml_size_200m_load</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_size_200m_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ES.GFA.AD.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_size_200m_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ES.GFA.AD.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_size_200m_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ES.GFA.AD.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_size_200m_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ES.GFA.AD.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_size_200m_load-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_size_200m_display-feature-box" data-feature="gml_size_200m_display">
+          <h2>gml_size_200m_display</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_size_200m_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ES.GFA.AD.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_size_200m_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ES.GFA.AD.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_size_200m_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ES.GFA.AD.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_size_200m_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ES.GFA.AD.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_size_200m_display-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_geometry_load-feature-box" data-feature="gml_geometry_load">
+          <h2>gml_geometry_load</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_geometry_load"
+                    data-result="Supported"
+                    data-notes="also when geometries are 'hidden' in complex data types, such in the case of the AD theme"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_geometry_load"
+                    data-result="Supported"
+                    data-notes="also when geometries are 'hidden' in complex data types, such as the case of the AD theme"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_geometry_load"
+                    data-result="Supported"
+                    data-notes="Also when geometries are 'hidden' in complex data types, such as the case of the AD theme, coordinates are shown in the data perspective."
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_geometry_load"
+                    data-result="Supported"
+                    data-notes="also when geometries are 'hidden' in complex data types, such in the case of the AD theme"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_geometry_load-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_geometry_display-feature-box" data-feature="gml_geometry_display">
+          <h2>gml_geometry_display</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_geometry_display"
+                    data-result="Supported"
+                    data-notes="also when geometries are 'hidden' in complex data types, such in the case of the AD theme"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_geometry_display"
+                    data-result="Supported"
+                    data-notes="also when geometries are 'hidden' in complex data types, such as the case of the AD theme"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_geometry_display"
+                    data-result="Partially supported"
+                    data-notes="When geometries are 'hidden' in complex data types, such as the case of the AD theme, the geometries are not displayed on the map."
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_geometry_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_geometry_display-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_mixed_geometry_load-feature-box" data-feature="gml_mixed_geometry_load">
+          <h2>gml_mixed_geometry_load</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_mixed_geometry_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_mixed_geometry_load"
+                    data-result="Partially Supported"
+                    data-notes="Only when NOT USING the 'GML Application Schema Toolbox' plugin"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_mixed_geometry_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_mixed_geometry_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_mixed_geometry_load-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_mixed_geometry_display-feature-box" data-feature="gml_mixed_geometry_display">
+          <h2>gml_mixed_geometry_display</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_mixed_geometry_display"
+                    data-result="Supported"
+                    data-notes="When loaded, data are split in different layers for each geometry type"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_mixed_geometry_display"
+                    data-result="Partially Supported"
+                    data-notes="Only when NOT USING the 'GML Application Schema Toolbox' plugin - One layer provided for each geometry type"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_mixed_geometry_display"
+                    data-result="Supported"
+                    data-notes="both points and polygons are visible in the map at the same time"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_mixed_geometry_display"
+                    data-result="Supported"
+                    data-notes="both points and polygons are visible at the same time"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_mixed_geometry_display-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_multiple_geometry_load-feature-box" data-feature="gml_multiple_geometry_load">
+          <h2>gml_multiple_geometry_load</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_multiple_geometry_load"
+                    data-result="Partially Supported"
+                    data-notes="only using 'Complex GML Info plugin' pop-up can see the 'ef:representativePoint'- only using 'GML Loader' plugin can see multiple occurrences of 'ad:GeographicPosition'"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_multiple_geometry_load"
+                    data-result="Supported"
+                    data-notes="need to use the GML Application schema plugin. Tested both with multiple geometries in different properties (ef:representativePoint)and multiple occurrences of the same geometry property (ad:geographicPosition). The behaviour with Ad is tested using the file 'AD.Spain_full-2geographicPositions.gml'"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_multiple_geometry_load"
+                    data-result="Supported"
+                    data-notes="e.g. representative points coordinates are shown in the 'Data perspective'"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_multiple_geometry_load"
+                    data-result="Supported"
+                    data-notes="e.g. representative points coordinates are shown"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_multiple_geometry_load-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_multiple_geometry_display-feature-box" data-feature="gml_multiple_geometry_display">
+          <h2>gml_multiple_geometry_display</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_multiple_geometry_display"
+                    data-result="Not Supported"
+                    data-notes="tested also with multiple occurrences of the 'ad:GeographicPosition'"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_multiple_geometry_display"
+                    data-result="Partially Supported"
+                    data-notes="need to use the GML Application schema toolbox plugin. Multiple occurrences of the same geometry property are displayed only using the 'Load in relational mode (GMLAS)' or the 'Load from GMLAS database' options. Multiple geometries in different properties are displayed no matter the load option selected and in different layers. "
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_multiple_geometry_display"
+                    data-result="Not Supported"
+                    data-notes="e.g. representative points geometries are not shown in the 'Map perspective'"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_multiple_geometry_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_multiple_geometry_display-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_crs_http_encoding-feature-box" data-feature="gml_crs_http_encoding">
+          <h2>gml_crs_http_encoding</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_crs_http_encoding"
+                    data-result="Supported"
+                    data-notes="http://www.opengis.net/def/crs/EPSG/0/4258"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_crs_http_encoding"
+                    data-result="Supported"
+                    data-notes="http://www.opengis.net/def/crs/EPSG/0/4258"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_crs_http_encoding"
+                    data-result="Supported"
+                    data-notes="http://www.opengis.net/def/crs/EPSG/0/4258"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_crs_http_encoding"
+                    data-result="Supported"
+                    data-notes="http://www.opengis.net/def/crs/EPSG/0/4258"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_crs_http_encoding-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_geometry_3d_load-feature-box" data-feature="gml_geometry_3d_load">
+          <h2>gml_geometry_3d_load</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_geometry_3d_load"
+                    data-result="Partially Supported"
+                    data-notes="3d coordinates are loaded correctly if both the srsName and the srsDimension attributes are set. If the srsDimension attribute is not specified, the tool works correctly only in case of point geometries. Incorrect results - z dimension dropped- for linestring and polygons"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry-No.srsDimension.gml"
+                    data-date-of-test="2019-04-08"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_geometry_3d_load"
+                    data-result="Partially Supported"
+                    data-notes="3d coordinates are loaded correctly if both the 'srsName' and the 'srsDimension' attributes are set. If the srsDimension attribute is not specified, the tool works correctly only in case of point geometries. Incorrect results - z dimension dropped- for linestring and polygons"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry-No.srsDimension.gml"
+                    data-date-of-test="2019-04-08"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_geometry_3d_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.3-coord.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_geometry_3d_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.3-coord.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_geometry_3d_load-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_geometry_3d_display-feature-box" data-feature="gml_geometry_3d_display">
+          <h2>gml_geometry_3d_display</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_geometry_3d_display"
+                    data-result="Partially Supported"
+                    data-notes="3d coordinates are displayed correctly if both the srsName and the srsDimension attributes are set. If the srsDimension attribute is not specified, the tool works correctly only in case of point geometries. Incorrect results for linestring and polygons"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry-No.srsDimension.gml"
+                    data-date-of-test="2019-04-08"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_geometry_3d_display"
+                    data-result="Partially Supported"
+                    data-notes="3d coordinates are displayed correctly if both the 'srsName' and the 'srsDimension' attributes are set. If the srsDimension attribute is not specified, the tool works correctly only in case of point geometries. Incorrect results for linestring and polygons"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry-No.srsDimension.gml"
+                    data-date-of-test="2019-04-08"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_geometry_3d_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.3-coord.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_geometry_3d_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.3-coord.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_geometry_3d_display-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_complex_property_load-feature-box" data-feature="gml_complex_property_load">
+          <h2>gml_complex_property_load</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_complex_property_load"
+                    data-result="Supported"
+                    data-notes="need to use 'Complex GML Info' or 'GML Loader' plugins"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_complex_property_load"
+                    data-result="Supported"
+                    data-notes="need to use the 'GML Application Schema Toolbox' plugin"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_complex_property_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_complex_property_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_complex_property_load-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_complex_property_display-feature-box" data-feature="gml_complex_property_display">
+          <h2>gml_complex_property_display</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_complex_property_display"
+                    data-result="Supported"
+                    data-notes="need to use 'Complex GML Info' or 'GML Loader' plugins"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_complex_property_display"
+                    data-result="Supported"
+                    data-notes="need to use the 'GML Application Schema Toolbox' plugin"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_complex_property_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_complex_property_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_complex_property_display-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_complex_property_style-feature-box" data-feature="gml_complex_property_style">
+          <h2>gml_complex_property_style</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_complex_property_style"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_complex_property_style"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_complex_property_style"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_complex_property_style"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_complex_property_style-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_complex_property_processing-feature-box" data-feature="gml_complex_property_processing">
+          <h2>gml_complex_property_processing</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_complex_property_processing"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_complex_property_processing"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_complex_property_processing"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_complex_property_processing"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_complex_property_processing-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_multiple_occurrences_load-feature-box" data-feature="gml_multiple_occurrences_load">
+          <h2>gml_multiple_occurrences_load</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_multiple_occurrences_load"
+                    data-result="Supported"
+                    data-notes="need to use 'Complex GML Info' or 'GML Loader' plugins - test field e.g. ef:hasObservation"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_multiple_occurrences_load"
+                    data-result="Supported"
+                    data-notes="need to use the 'GML Application Schema Toolbox' plugin"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_multiple_occurrences_load"
+                    data-result="Supported"
+                    data-notes="e.g. ef:hasObservation, ef:belongTo"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_multiple_occurrences_load"
+                    data-result="Supported"
+                    data-notes="e.g. ef:hasObservation, ef:belongTo"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_multiple_occurrences_load-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_multiple_occurrences_display-feature-box" data-feature="gml_multiple_occurrences_display">
+          <h2>gml_multiple_occurrences_display</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_multiple_occurrences_display"
+                    data-result="Supported"
+                    data-notes="need to use 'Complex GML Info' or 'GML Loader' plugins"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_multiple_occurrences_display"
+                    data-result="Supported"
+                    data-notes="need to use the 'GML Application Schema Toolbox' plugin"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_multiple_occurrences_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_multiple_occurrences_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_multiple_occurrences_display-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_multiple_occurrences_style-feature-box" data-feature="gml_multiple_occurrences_style">
+          <h2>gml_multiple_occurrences_style</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_multiple_occurrences_style"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_multiple_occurrences_style"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_multiple_occurrences_style"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_multiple_occurrences_style"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_multiple_occurrences_style-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_multiple_occurrences_processing-feature-box" data-feature="gml_multiple_occurrences_processing">
+          <h2>gml_multiple_occurrences_processing</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_multiple_occurrences_processing"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_multiple_occurrences_processing"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_multiple_occurrences_processing"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_multiple_occurrences_processing"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_multiple_occurrences_processing-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_xnil_load-feature-box" data-feature="gml_xnil_load">
+          <h2>gml_xnil_load</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_xnil_load"
+                    data-result="Supported"
+                    data-notes="ONLY if the 'Complex GML Info' plugin is used"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_xnil_load"
+                    data-result="Supported"
+                    data-notes="need to use the 'GML Application Schema Toolbox' plugin"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_xnil_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_xnil_load"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_xnil_load-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_xnil_display-feature-box" data-feature="gml_xnil_display">
+          <h2>gml_xnil_display</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_xnil_display"
+                    data-result="Supported"
+                    data-notes="need to use the 'Complex GML Info' plugin"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_xnil_display"
+                    data-result="Supported"
+                    data-notes="need to use the 'GML Application Schema Toolbox' plugin"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_xnil_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_xnil_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_xnil_display-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_nilreason_load-feature-box" data-feature="gml_nilreason_load">
+          <h2>gml_nilreason_load</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_nilreason_load"
+                    data-result="Supported"
+                    data-notes="need to use the 'Complex GML Info' plugin"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_nilreason_load"
+                    data-result="Supported"
+                    data-notes=" need to use the 'GML Application Schema Toolbox' plugin"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_nilreason_load"
+                    data-result="Supported"
+                    data-notes=" None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_nilreason_load"
+                    data-result="Supported"
+                    data-notes=" None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_nilreason_load-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_nilreason_display-feature-box" data-feature="gml_nilreason_display">
+          <h2>gml_nilreason_display</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_nilreason_display"
+                    data-result="Supported"
+                    data-notes="need to use the 'Complex GML Info' plugin"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="supported"
+                    data-feature="gml_nilreason_display"
+                    data-result="Supported"
+                    data-notes="need to use the 'GML Application Schema Toolbox' plugin"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_nilreason_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="supported"
+                    data-feature="gml_nilreason_display"
+                    data-result="Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_nilreason_display-summary-box"></div>
+        </div>
+      
+        <div class="feature-box" id="gml_xlinks_resolve-feature-box" data-feature="gml_xlinks_resolve">
+          <h2>gml_xlinks_resolve</h2>
+          <table class="result-table">
+            <tr>
+              
+              <th>QGIS</th>
+              
+              <th>ArcGIS Online</th>
+              
+              <th>hale studio</th>
+              
+              <th>OpenLayers</th>
+              
+              <th>FME Desktop</th>
+              
+              <th>Leaflet</th>
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_xlinks_resolve"
+                    data-result="Partially Supported"
+                    data-notes="If the 'Complex GML Info' plugin is used, the internal links (#) are resolved, but external links are clickable (they open in the browser) only when not using any plugin"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.3D.gml"
+                    data-date-of-test="2019-01-17"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2.18.24-Las Palmas
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+            <tr>
+              
+                
+                <td class="partialy-supported"
+                    data-feature="gml_xlinks_resolve"
+                    data-result="Partially Supported"
+                    data-notes="need to use the 'GML Application Schema Toolbox' plugin. It is possible to resolve the external links (as ‘embedded’ description or ‘new layer’), the internal links (#) are NOT resolved."
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml"
+                    data-date-of-test="2019-01-25"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.4-Madeira
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_xlinks_resolve"
+                    data-result="Not Supported"
+                    data-notes="None"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml"
+                    data-date-of-test="2019-02-04"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  3.4.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+                
+                <td class="not-supported"
+                    data-feature="gml_xlinks_resolve"
+                    data-result="Not Supported"
+                    data-notes="the possibility to create an ad-hoc custom transformer should be investigated"
+                    data-used-data="https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml"
+                    data-date-of-test="2019-02-18"
+                    onclick="drawSummary(this);"
+                    style="cursor: pointer;">
+                  2018.1
+                </td>
+                
+              
+                
+                  <td class="not-tested" onclick="drawSummary(this);">
+                    Not Tested
+                  </td>
+                
+              
+            </tr>
+            
+          </table>
+          <div class="summary-box" id="gml_xlinks_resolve-summary-box"></div>
+        </div>
+      
+    </div>
+  
+  </body>
+</html>
