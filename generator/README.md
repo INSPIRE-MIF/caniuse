@@ -1,12 +1,6 @@
-# Generator for CanIUse Test Results
+#JSON Parser
 
-This generator reads the JSON-encoded test results and writes a single, self-sustained HTML file.
-
-## Preconditions
-
-Ruby needs to be installed.
-
-## How to run
+##  Run
 
 ```sh
 ./caniuse_generator.rb ../results > out.html
