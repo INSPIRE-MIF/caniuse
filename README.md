@@ -20,7 +20,8 @@ We are specifically testing for a wide range of features and how they are suppor
 
 ### Results
 
-The results from the tests are available [here](generator/out.html)
+The results from the tests (currently for GML only) are available [here](generator/out.html).
+
 ### Community Contributions
 
 If you would like to add information for any other software or update existing information for a new version of a software, please let us know.
