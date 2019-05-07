@@ -2,7 +2,7 @@
 
 In this repository we document which features of INSPIRE GML and any alternative encodings (such as the GeoJSON encoding currently under development) can be used in which software product. The repository is created as part of the MIG 2017.3 action work to improve the usability of INSPIRE Data.
 
-We have test several client applications, including but not limited to:
+We have test several client applications, including:
 
 * QGIS 2.18 and QGIS 3.4  
 * Esri ArcMap 10.5
