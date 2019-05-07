@@ -18,6 +18,10 @@ We are specifically testing for a wide range of features and how they are suppor
 * [GeoJSON tests](docs/geoJSON.md)
 * [GML tests](docs/gml.md)
 
+### Results
+
+The results from tests with different client applications are available [here](https://marcominghini.github.io/caniuse/index.html)
+
 ### Community Contributions
 
 If you would like to add information for any other software or update existing information for a new version of a software, please let us know.
