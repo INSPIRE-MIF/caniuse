@@ -20,7 +20,7 @@ We are specifically testing for a wide range of features and how they are suppor
 
 ### Results
 
-The results from tests with different client applications are available [here](https://marcominghini.github.io/caniuse/index.html)
+The results from tests with different client applications are available [here](generator/caniuse-20190329_AK.html)
 
 ### Community Contributions
 
