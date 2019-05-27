@@ -20,7 +20,7 @@ We are specifically testing for a wide range of features and how they are suppor
 
 ### Results
 
-The results from the tests (currently for GML only) are available [here](generator/out.html).
+The results from the tests (currently for GML only) are available [here](https://inspire-mif.github.io/caniuse/generator/out.html).
 
 ### Community Contributions
 
