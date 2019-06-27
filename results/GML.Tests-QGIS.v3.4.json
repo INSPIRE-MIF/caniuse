@@ -17,14 +17,14 @@
                 "dateOfTest": "2019-01-25"
             },        
             "gml_WFS2_load": {
-                "result": "Supported",
-                "notes": "need to use the 'GML Application Schema toolbox' plugin",
+                "result": "Partially Supported",
+                "notes": "need to use the 'GML Application Schema toolbox' plugin. When the'Filter by extent' option is selected, no data is loaded and the following error is returned <'Crs' object has no attribute 'split' > ",
                 "dataUsed": "https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100",
                 "dateOfTest": "2019-01-25"
             },
             "gml_WFS2_display": {
-                "result": "Supported",
-                "notes": "need to use the 'GML application schema toolbox' plugin",
+                "result": "Partially Supported",
+                "notes": "need to use the 'GML application schema toolbox' plugin.  When the'Filter by extent' option is selected, no data is displayed",
                 "dataUsed": "https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100",
                 "dateOfTest": "2019-01-25"
             },            
@@ -181,7 +181,7 @@
             },
              "gml_xlinks_resolve": {
                 "result": "Partially Supported",
-                "notes": "need to use the 'GML Application Schema Toolbox' plugin. It is possible to resolve the external links (as ‘embedded’ description or ‘new layer’), the internal links (#) are NOT resolved.",
+                "notes": "need to use the 'GML Application Schema Toolbox' plugin to display the 'xlink:href' attributes. It is possible to resolve the external links (as ‘embedded’ description or ‘new layer’), the internal links (#) are NOT resolved.",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml", 
                 "dateOfTest": "2019-01-25"
             }
