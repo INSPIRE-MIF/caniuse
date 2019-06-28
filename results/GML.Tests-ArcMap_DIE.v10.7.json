@@ -63,7 +63,7 @@
                 "notes": "; used with the Data Interoperability Extension",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
                 "dateOfTest": "2019-06-04"
-            }
+            },
             "gml_multiple_geometry_load": {
                 "result": "Supported",
                 "notes": "as Multi Point layer with representative point coordinates; used with the Data Interoperability Extension",
