@@ -46,7 +46,7 @@
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/geojson_property_extrapropertiesfeature.json",
                 "dateOfTest": "2018-12-14"
             },
-            "ggeojson_geometry_geometrycollection_display": {
+            "geojson_geometry_geometrycollection_display": {
                 "result": "Supported",
                 "notes": "using the Data Interoperability Extension",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/geojson_property_extrapropertiesfeature.json",
