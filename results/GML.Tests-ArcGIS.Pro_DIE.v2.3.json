@@ -1,7 +1,7 @@
 {
 	"software": "ArcGIS Pro",
     "version": "2.3",
-    	"notes”:”used with the Data Interoperability Extension",
+    	"notes": "used with the Data Interoperability Extension",
     "results": {
         "gml": {
             "gml_file_load": {
