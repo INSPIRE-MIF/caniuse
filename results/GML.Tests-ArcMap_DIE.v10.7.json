@@ -1,7 +1,7 @@
 {
 	"software": "ArcMap Desktop",
     "version": "10.7",
-    	"notes”:”same workflow as ArcGIS Pro; ArcMap used with the Data Interoperability Extension",
+    	"notes": "same workflow as ArcGIS Pro; ArcMap used with the Data Interoperability Extension",
     "results": {
         "gml": {
             "gml_file_load": {
