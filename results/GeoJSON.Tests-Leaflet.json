@@ -1,0 +1,119 @@
+{
+    "software": "Leaflet",
+    "version": "1.4.0",
+    "notes":"To be further investigated with experts how to implement some custom logic for linking related spatial objects e.g. EnvironmentalMonitoringFacility and relevant MeasureTimeseriesObservation. Out of the box, Leaflet can show only one of the two features with overlapping geometries. Ideally, a solution should be found to line up the properties of the different features  in the info popup. Test case https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_3.geojson.geojson",
+    "results": {
+        "geojson": {
+            "geojson_file_load": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson.geojson",
+                "dateOfTest": "2019-05-06"
+            },
+            "geojson_file_display": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson",
+                "dateOfTest": "2019-05-06"
+            },                
+	        "geojson_features_edit": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson.geojson",
+                "dateOfTest": "2019-05-06"
+            },
+            "geojson_features_create": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson.geojson",
+                "dateOfTest": "2019-05-06"
+            },                              
+            "geojson_geometry_point_load": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson.geojson",
+                "dateOfTest": "2019-05-06"
+            },
+             "geojson_geometry_point_display": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson.geojson",
+                "dateOfTest": "2019-05-06"
+            },                        
+            "geojson_geometry_geometrycollection_load": {
+                "result": "Supported",
+                "notes": "None",
+		        "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson-2geographicPositions.geojson",
+                "dateOfTest": "2019-05-06"
+            },
+             "geojson_geometry_geometrycollection_display": {
+                "result": "Supported",
+                "notes": "None",
+		        "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson-2geographicPositions.geojson",
+                "dateOfTest": "2019-05-06"
+            },
+             "geojson_geometry_3d_load": {
+                "result": "Supported",
+                "notes": "only tested for points",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1-3D.geojson.geojson",
+                "dateOfTest": "2019-05-06"
+            },
+             "geojson_geometry_3d_display": {
+                "result": "Supported",
+                "notes": "only tested for points",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1-3D.geojson.geojson",
+                "dateOfTest": "2019-05-06"
+            },                      
+            "geojson_property_boolean_load": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson.geojson",
+                "dateOfTest": "2019-05-06"
+            },
+            "geojson_property_boolean_display": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson.geojson",
+                "dateOfTest": "2019-05-06"
+            },
+            "geojson_property_boolean_style": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson.geojson",
+                "dateOfTest": "2019-05-06"
+            },
+             "geojson_property_boolean_processing": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson.geojson",
+                "dateOfTest": "2019-05-06"
+            },                     
+            "geojson_property_array_load": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/efs_example_2_more.timeseries.results.geojson",
+                "dateOfTest": "2019-05-06"
+            },
+            "geojson_property_array_display": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson",
+                "dateOfTest": "2019-05-06"
+            },
+            "geojson_property_array_style": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson",
+                "dateOfTest": "2019-05-06"
+            },
+             "geojson_property_array_processing": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson",
+                "dateOfTest": "2019-05-06"
+            }
+            }
+            
+        }
+    }
+}

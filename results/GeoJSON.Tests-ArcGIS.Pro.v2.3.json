@@ -1,0 +1,63 @@
+{
+    "software": "ArcGIS Pro",
+    "version": "2.3",
+    "notes": "use 'JSON To Features' Tool - missing test results to be added",
+    "results": {
+        "geojson": {
+            "geojson_geometry_pointstring_load": {
+                "result": "Supported",
+                "notes": "using 'JSON To Features' Tool",
+                "dataUsed": "https://github.com/INSPIRE-MIF/2017.2/blob/master/GeoJSON/ads/examples/ads_example_1.geojson",
+                "dateOfTest": "2019-05-15"
+            },
+            "geojson_geometry_pointstring_display": {
+                "result": "Supported",
+                "notes": "using 'JSON To Features' Tool",
+                "dataUsed": "https://github.com/INSPIRE-MIF/2017.2/blob/master/GeoJSON/ads/examples/ads_example_1.geojson ",
+                "dateOfTest": "2019-05-15"
+            },            
+			"geojson_geometry_linestring_load": {
+                "result": "Supported",
+                "notes": "using 'JSON To Features' Tool",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/geojson_property_extrapropertiesfeature.json",
+                "dateOfTest": "2019-05-17"
+            },
+            "geojson_geometry_linestring_display": {
+                "result": "Supported",
+                "notes": "using 'JSON To Features' Tool",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/geojson_property_extrapropertiesfeature.json",
+                "dateOfTest": "2019-05-17"
+            },
+            "geojson_property_polygon_load": {
+                "result": "Supported",
+                "notes": "using 'JSON To Features' Tool",
+                "dataUsed": "https://ckan.dataplatform.nl/dataset/5713301f-c5cc-48b3-ae2a-8a107a6129f3/resource/3a85bd19-6836-4e0f-8a27-bd5486632a44/download/wijken-utrecht.geojson",
+                "dateOfTest": "2019-05-17"
+            },
+            "geojson_property_polygon_display": {
+                "result": "Supported",
+                "notes": "using 'JSON To Features' Tool",
+                "dataUsed": "https://ckan.dataplatform.nl/dataset/5713301f-c5cc-48b3-ae2a-8a107a6129f3/resource/3a85bd19-6836-4e0f-8a27-bd5486632a44/download/wijken-utrecht.geojson",
+                "dateOfTest": "2019-05-17"
+            },
+            "geojson_size_200m_load": {
+                "result": "Supported",
+                "notes": "using 'JSON To Features' Tool",
+                "dataUsed": "https://ckan.dataplatform.nl/dataset/3ebca230-091a-4bcd-b406-b3ef0d043176/resource/2d02e519-2a11-4515-92e9-f3f08015507f/download/wegdelen-json.zip",
+                "dateOfTest": "2018-12-18"
+            },
+            "geojson_size_200m_display": {
+                "result": "Supported",
+                "notes": "using 'JSON To Features' Tool",
+                "dataUsed": "https://ckan.dataplatform.nl/dataset/3ebca230-091a-4bcd-b406-b3ef0d043176/resource/2d02e519-2a11-4515-92e9-f3f08015507f/download/wegdelen-json.zip",
+                "dateOfTest": "2018-12-18"
+            },
+            "geojson_property_object_processing": {
+                "result": "Supported",
+                "notes": "using 'JSON To Features' Tool; imported features can be processed directly with geoprocessing tools",
+                "dataUsed": "https://ckan.dataplatform.nl/dataset/5713301f-c5cc-48b3-ae2a-8a107a6129f3/resource/3a85bd19-6836-4e0f-8a27-bd5486632a44/download/wijken-utrecht.geojson",
+                "dateOfTest": "2019-05-21"
+            }
+        }
+    }
+}

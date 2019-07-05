@@ -1,0 +1,57 @@
+{
+	"software": "ArcGIS Online",
+	"version": "March 2019 Release",
+	"notes": "Add data and published as a hosted layer - missing test results to be added",
+	"results": {
+        "geojson": {
+            "geojson_geometry_pointstring_load": {
+                "result": "Supported",
+                "notes": "Add data and published as a hosted feature layer",
+                "dataUsed": "https://github.com/INSPIRE-MIF/2017.2/blob/master/GeoJSON/ads/examples/ads_example_1.geojson",
+                "dateOfTest": "2019-05-15"
+            },
+            "geojson_geometry_pointstring_display": {
+                "result": "Supported",
+                "notes": "Add data and published as a hosted feature layer",
+                "dataUsed": "https://github.com/INSPIRE-MIF/2017.2/blob/master/GeoJSON/ads/examples/ads_example_1.geojson ",
+                "dateOfTest": "2019-05-15"
+            }, 
+            "geojson_property_polyline_load": {
+                "result": "Supported",
+                "notes": "Add data and published as a hosted feature layer",
+                "dataUsed": "https://services.geodata-utrecht.nl/geoserver/v01_2_1_wegennet_BGT_thema/wfs?service=wfs&version=2.0.0&request=GetFeature&typeName=BGT_Themalaag_Verkeerslicht_lijn&outputFormat=application/json",
+                "dateOfTest": "2019-05-21"
+            },
+            "geojson_property_polyline_display": {
+                "result": "Supported",
+                "notes": "Add data and published as a hosted feature layer",
+                "dataUsed": "https://services.geodata-utrecht.nl/geoserver/v01_2_1_wegennet_BGT_thema/wfs?service=wfs&version=2.0.0&request=GetFeature&typeName=BGT_Themalaag_Verkeerslicht_lijn&outputFormat=application/json",
+                "dateOfTest": "2019-05-21"
+            },
+            "geojson_property_polygon_load": {
+                "result": "Supported",
+                "notes": "Add data and published as a hosted feature layer",
+                "dataUsed": "https://ckan.dataplatform.nl/dataset/5713301f-c5cc-48b3-ae2a-8a107a6129f3/resource/3a85bd19-6836-4e0f-8a27-bd5486632a44/download/wijken-utrecht.geojson",
+                "dateOfTest": "2019-05-17"
+            },
+            "geojson_property_polygon_display": {
+                "result": "Supported",
+                "notes": "Add data and published as a hosted feature layer",
+                "dataUsed": "https://ckan.dataplatform.nl/dataset/5713301f-c5cc-48b3-ae2a-8a107a6129f3/resource/3a85bd19-6836-4e0f-8a27-bd5486632a44/download/wijken-utrecht.geojson",
+                "dateOfTest": "2019-05-17"
+            },
+            "geojson_size_200m_load": {
+                "result": "Not supported",
+                "notes": "upload files up to 200 GB to My Content through a web browser (https://doc.arcgis.com/en/arcgis-online/reference/supported-items.htm); for very large files, a common workflow is to load data in ArcGIS Pro and share as feature layer for use in ArcGIS Online",
+                "dataUsed": "https://ckan.dataplatform.nl/dataset/3ebca230-091a-4bcd-b406-b3ef0d043176/resource/2d02e519-2a11-4515-92e9-f3f08015507f/download/wegdelen-json.zip",
+                "dateOfTest": "2018-12-18"
+            },
+            "geojson_property_object_processing": {
+                "result": "Supported",
+                "notes": "hosted features can be processed directly with anlysis tools",
+                "dataUsed": "https://ckan.dataplatform.nl/dataset/5713301f-c5cc-48b3-ae2a-8a107a6129f3/resource/3a85bd19-6836-4e0f-8a27-bd5486632a44/download/wijken-utrecht.geojson",
+                "dateOfTest": "2019-05-21"
+            }
+        }
+    }
+}
