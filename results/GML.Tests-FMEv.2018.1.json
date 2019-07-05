@@ -1,7 +1,7 @@
 {
     "software": "FME Desktop",
     "version": "2018.1",
-    "notes":"the test aims at verifying FME behaviour on existing GML files using the 'FME Data inspector'",
+    "notes":"the test aims at verifying FME behaviour on existing gml files using the 'FME Data inspector'",
     "results": {
         "gml": {
             "gml_file_load": {
@@ -30,13 +30,13 @@
             },            
 	        "gml_features_edit": {
                 "result": "Partially Supported",
-                "notes": "GML files cannot be edited directly. A data transformation must be performed. Geometries cannot be edited directly in the data inspector.",
+                "notes": "the gml file cannot be edited directly. ETL needed. Geometries cannot be edited directly in the data inspector.",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-02-18"
             },
             "gml_features_create": {
                 "result": "Partially Supported",
-                "notes": "New features can be added. Geometries anyway cannot be edited directly in the data inspector and must be provided by other sources (e.g. importing another shapefile or calculated from geometries of already existing features)",
+                "notes": "New features can be added but an ETL process is needed.New geometries cannot be edited directly in the data inspector and must be provided by other sources (e.g. importing another shapefile or calculated from geometries of already existing features)",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-02-18"
             },       
@@ -120,13 +120,13 @@
                 "dateOfTest": "2019-02-18"
             },
             "gml_complex_property_style": {
-                "result": "Not Supported",
+                "result": "Supported",
                 "notes": "None",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-02-18"
             },
              "gml_complex_property_processing": {
-                "result": "Not Supported",
+                "result": "Supported",
                 "notes": "None",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-02-18"
@@ -144,13 +144,13 @@
                 "dateOfTest": "2019-02-18"
             },
          "gml_multiple_occurrences_style": {
-                "result": "Not Supported",
+                "result": "Supported",
                 "notes": "None",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-02-18"
             },
              "gml_multiple_occurrences_processing": {
-                "result": "Not Supported",
+                "result": "Supported",
                 "notes": "None",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-02-18"
@@ -181,7 +181,7 @@
             },
              "gml_xlinks_resolve": {
                 "result": "Not Supported",
-                "notes": "the possibility to create an ad-hoc custom transformer should be investigated",
+                "notes": "None",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml", 
                 "dateOfTest": "2019-02-18"
             }

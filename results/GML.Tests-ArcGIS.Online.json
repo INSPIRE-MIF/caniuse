@@ -1,7 +1,7 @@
 {
     "software": "ArcGIS Online",
-    "version": "December 2018 update",
-    "notes":"",
+    "version": "December 2018 release",
+    "notes":"None",
     "results": {
         "gml": {
             "gml_file_load": {

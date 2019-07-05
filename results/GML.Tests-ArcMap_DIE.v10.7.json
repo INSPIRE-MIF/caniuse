@@ -27,20 +27,20 @@
                 "notes": "Loaded data displays, but the server returns multiple schemas for the feature: https://wfspoc.brgm-rec.fr/geoserver/wfs?SERVICE=WFS&VERSION=2.0.0&REQUEST=DescribeFeatureType&TYPENAMES=ef%3AEnvironmentalMonitoringFacility; same workflow as ArcGIS Pro; used with the Data Interoperability Extension",
                 "dataUsed": "https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100",
                 "dateOfTest": "2019-06-04"
-            },
+},
 	        "gml_features_edit": {
-                "result": "Supported",
-                "notes": "Direct GML editing is not supported, but during or after import features may be edited; same workflow as ArcGIS Pro; used with the Data Interoperability Extension",
+                "result": "Partially Supported",
+                "notes": "Direct GML editing is not supported; an ETL process is required, but during or after import features may be edited; same workflow as ArcGIS Pro; used with the Data Interoperability Extension",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-06-04"
             },
             "gml_features_create": {
-                "result": "Supported",
-                "notes": "Features of the same schema may be created in the imported dataset; same workflow as ArcGIS Pro; used with the Data Interoperability Extension",
+                "result": "Partially Supported",
+                "notes": "Features of the same schema may be created in the imported dataset; an ETL process is required; same workflow as ArcGIS Pro; used with the Data Interoperability Extension",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-06-04"
             }, 
-           "gml_size_200m_load": {
+          "gml_size_200m_load": {
                 "result": "Supported",
                 "notes": "; used with the Data Interoperability Extension",
                 "dataUsed": "https://download.data.public.lu/resources/inspire-annex-i-theme-addresses-addresses-45/20190305-185158/ad.address.gml",
@@ -126,7 +126,7 @@
             },
                 "gml_xlinks_resolve": {
                 "result": "Supported",
-                "notes": "used with the Data Interoperability Extension",
+                "notes": "used with the Data Interoperability Extension - to be tested more in depth ",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
                 "dateOfTest": "2019-06-14"
             }

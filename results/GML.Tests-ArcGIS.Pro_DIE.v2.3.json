@@ -29,14 +29,14 @@
                 "dateOfTest": "2019-06-04"
             },            
 	        "gml_features_edit": {
-                "result": "Supported",
-                "notes": "Direct GML editing is not supported, but during or after import features may be edited; used with the Data Interoperability Extension",
+                "result": "Partially Supported",
+                "notes": "Direct GML editing is not supported; an ETL process is required, but during or after import features may be edited; used with the Data Interoperability Extension",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-06-04"
             },
             "gml_features_create": {
-                "result": "Supported",
-                "notes": "Features of the same schema may be created in the imported dataset; used with the Data Interoperability Extension",
+                "result": "Partially Supported",
+                "notes": "Features of the same schema may be created in the imported dataset; an ETL process is required; used with the Data Interoperability Extension",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
                 "dateOfTest": "2019-06-04"
             }, 
