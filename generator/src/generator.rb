@@ -15,7 +15,7 @@ class Generator
   def parse_data
     Dir.foreach(@dir) do |filename|
       next unless filename =~ /^.*\.json$/
-      add_results ::JSON.parse(File.read "#{@dir}/#{filename}")
+      add_results ::JSON.parse(::File.read("#{@dir}/#{filename}"))
     end
     adjust_data
     self
@@ -23,7 +23,7 @@ class Generator
 
   def render_html
     template_file = './src/templates/main.html.erb'
-    @html = render_template(template_file, results: @results)
+    @html = render_template(template_file, results: @results, translates: translates)
     self
   end
 
@@ -62,5 +62,12 @@ class Generator
 
   def softwares
     Hash[['QGIS', 'ArcGIS Online', 'hale studio', 'OpenLayers', 'FME Desktop', 'Leaflet'].collect { |item| [item, nil] } ]
+  end
+
+  def translates
+    {
+      'GML' => {name: 'Geography Markup Language' , description: 'This section describes the tests being performed to assess usability of INSPIRE data in GML encoding.'},
+      'GEOJSON' => {name: 'GeoJSON' , description: 'This section describes the tests being performed to assess usability of INSPIRE data in GeoJSON encoding.'}
+    }
   end
 end

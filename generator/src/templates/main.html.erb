@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CanIUse INSPIRE?</title>
+    <title>CanIUse</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       * {
         box-sizing: border-box;
       }
       body {
-        font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
+        font-family: Verdana;
         margin: 0px;
         padding-bottom: 24px;
       }
@@ -62,9 +62,9 @@
         display: block;
       }
       header, footer {
-        background-color: #000000;
+        background-color: #51a1e9;
         width: 100%;
-        height: 245px;
+        height: 76px;
         margin: 0px;
       }
       footer {
@@ -145,7 +145,14 @@
   </header>
   <%results.each do |category, features|%>
     <div class="category-box">
+      <%if translates[category.upcase]&.has_key? :name %>
+      <h1><%=translates[category.upcase][:name]%> (<%=category%>)</h1>
+      <%else%>
       <h1><%=category%></h1>
+      <%end%>
+      <%if translates[category.upcase]&.has_key? :description %>
+      <p><%=translates[category.upcase][:description]%></p>
+      <%end%>
       <%features.each do |feature, softwares|%>
         <div class="feature-box" id="<%=feature%>-feature-box" data-feature="<%=feature%>">
           <h2><%=feature%></h2>
