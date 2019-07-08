@@ -19,13 +19,3 @@ We are specifically testing for a wide range of features and how they are suppor
 * [GML tests](docs/gml.md)
 
 ### Results
-
-The results from the tests with GML and GeoJSON are available [here](https://inspire-mif.github.io/caniuse/generator/out.html).
-
-### Community Contributions
-
-If you would like to add information for any other software or update existing information for a new version of a software, please let us know.
-
-### License
-
-The documentation in this repository is available under the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0).
