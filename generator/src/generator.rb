@@ -61,6 +61,6 @@ class Generator
   end
 
   def softwares
-    Hash[['QGIS', 'ArcGIS Online', 'hale studio', 'OpenLayers', 'FME Desktop', 'Leaflet'].collect { |item| [item, nil] } ]
+    Hash[['QGIS', 'ArcGIS Online', 'ArcGIS Pro', 'ArcMap Desktop', 'hale studio', 'FME Desktop', 'OpenLayers', 'Leaflet'].collect { |item| [item, nil] } ]
   end
 end
