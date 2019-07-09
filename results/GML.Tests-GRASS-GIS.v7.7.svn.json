@@ -1,0 +1,158 @@
+{
+ "software": "GRASS GIS", 
+ "version": "7.7.svn", 
+ "results": {
+  "gml": {
+   "gml_file_load": {
+    "result": "Supported", 
+    "notes": "None", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_file_display": {
+    "result": "Supported", 
+    "notes": "None", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_WFS2_load": {
+    "result": "Supported", 
+    "notes": "None", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_WFS2_display": {
+    "result": "Supported", 
+    "notes": "None", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_file_edit": {
+    "result": "Non tested", 
+    "notes": "None", 
+    "dataUsed": "", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_file_create": {
+    "result": "Non tested", 
+    "notes": "None", 
+    "dataUsed": "", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_size_200m_load": {
+    "result": "Supported", 
+    "notes": "None", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_fsize_200m_display": {
+    "result": "Supported", 
+    "notes": "None", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_geometry_load": {
+    "result": "Partially supported", 
+    "notes": "Problem creating sqlite attribute table, default field column name not accepted, using v.external it works", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_geometry_display": {
+    "result": "Partially supported", 
+    "notes": "Problem creating sqlite attribute table, default field column name not accepted, using v.external it works", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_mixed_geometry_load": {
+    "result": "Supported", 
+    "notes": "None", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_mixed_geometry_display": {
+    "result": "Supported", 
+    "notes": "None", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_multiple_geometry_load": {
+    "result": "Supported", 
+    "notes": "None", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_multiple_geometry_display": {
+    "result": "Supported", 
+    "notes": "None", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_crs_http_encoding": {
+    "result": "Non tested", 
+    "notes": "None", 
+    "dataUsed": "", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_geometry_3d_load": {
+    "result": "Partially supported", 
+    "notes": "Problem creating sqlite attribute table, default field column name not accepted, using v.external it works", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.3D.srsDimension.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_geometry_3d_display": {
+    "result": "Partially supported", 
+    "notes": "Problem creating sqlite attribute table, default field column name not accepted, using v.external it works", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.3D.srsDimension.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_complex_property_load": {
+    "result": "Supported", 
+    "notes": "None", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_complex_property_display": {
+    "result": "Supported", 
+    "notes": "None", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_complex_property_style": {
+    "result": "Non tested", 
+    "notes": "None", 
+    "dataUsed": "", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_complex_property_processing": {
+    "result": "Non tested", 
+    "notes": "None", 
+    "dataUsed": "", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_multiple_occurrences_load": {
+    "result": "Supported", 
+    "notes": "None", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_multiple_occurrences_display": {
+    "result": "Supported", 
+    "notes": "None", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_multiple_occurrences_style": {
+    "result": "Non tested", 
+    "notes": "None", 
+    "dataUsed": "", 
+    "dateOfTest": "2019-07-09"
+   }, 
+   "gml_multiple_occurrences_processing": {
+    "result": "Non tested", 
+    "notes": "None", 
+    "dataUsed": "", 
+    "dateOfTest": "2019-07-09"
+   }
+  }
+ }
+}
