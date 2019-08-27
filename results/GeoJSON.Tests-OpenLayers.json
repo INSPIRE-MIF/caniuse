@@ -112,8 +112,6 @@
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson",
                 "dateOfTest": "2019-05-06"
             }
-            }
-            
         }
     }
 }
