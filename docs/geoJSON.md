@@ -200,7 +200,7 @@ There are some defined extensions for GeoJSON. In this section we summarize whet
 
 #### CRS
 
-Test what happens when using the optional crs definition together with projected coordinates.
+Test what happens when using the optional CRS definition together with projected coordinates.
 
 Test IDs: 
 
