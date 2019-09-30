@@ -41,7 +41,7 @@ Test expected outcome:
 
 * `data loads with no errors and point geometries are located in the Netherlands`
 
-#### Edit / create features
+#### Edit / Create features
 
 Test if client can edit/create geojson features
 
@@ -88,9 +88,6 @@ Test expected outcome:
 * `116 features (Polygons) loaded and located in Germany`
 
 ### Geometry
-
-
-Can the software load and display geometry collections?
 
 
 #### Geometry Collections
