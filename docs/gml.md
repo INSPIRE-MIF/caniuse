@@ -19,6 +19,7 @@ Test data:
 * `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml`
 
 Test expected outcome:
+
 the data is loaded and displays in the map - dataset contains 5 features - No representative points (ef:representativePoint) available in this EF dataset, so  only one geometry per feature has to be displayed. 
 
 #### Download data from WFS
