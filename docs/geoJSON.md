@@ -1,10 +1,9 @@
 # Documentation of GeoJSON Tests
 
 This document describes the tests being performed to assess usability of INSPIRE data in GeoJSON encoding. 
+This test suite focuses on the outcomes of the Action 2017.2 on alternative encodings for INSPIRE data, more specifically on the GeoJSON Encoding Rule for INSPIRE Addresses (https://github.com/INSPIRE-MIF/2017.2/blob/master/GeoJSON/ads/simple-addresses.md) and GeoJSON Encoding Rule for INSPIRE Environmental Monitoring Facilities (https://github.com/INSPIRE-MIF/2017.2/blob/master/GeoJSON/efs/simple-environmental-monitoring-facilities.md)
 
-GeoJSON is being discussed as an alternative encoding for INSPIRE data. To determine what features of GeoJSON to use in that alternative encoding, we have specified this test suite for client applications.
-
-## GeoJSON support
+## GeoJSON encoding support
 
 #### Load data from file
 
@@ -15,6 +14,14 @@ Test IDs:
 * `geojson_file_load`
 * `geojson_file_display`
 
+Test data:
+
+* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_1.geojson`
+
+Test expected outcome:
+
+* `geojson file loads - one point displayed in the map - structure is maintained with no information loss`
+
 #### Download data from WFS
 
 Test if client can load and display geojson data from a WFS 
@@ -23,6 +30,16 @@ Test IDs:
 
 * `geojson_WFS_load`
 * `geojson_WFS_display`
+
+Test data:
+
+WFS GetFeature request provided in the https://github.com/INSPIRE-MIF/2017.2/issues/51. Service provides address data for the Dutch Address key-register - Data structure does not conform to GeoJSON Encoding Rule for INSPIRE Addresses  
+
+* `https://geodata.nationaalgeoregister.nl/bag/wfs?request=GetFeature&service=WFS&typeName=bag:verblijfsobject&outputFormat=json&srsName=EPSG:4326&count=200&version=2.0.0`
+
+Test expected outcome:
+
+* `data loads with no errors and point geometries are located in the Netherlands`
 
 #### Edit / create features
 
@@ -33,14 +50,25 @@ Test IDs:
 * `geojson_features_edit`
 * `geojson_features_create`
 
+
+Test data:
+
+* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_1.geojson`
+
+Test expected outcome:
+
+* `geojson file can be successfully edited (edits saved) and new features can be added`
+
 #### File Size
 
 Test if the client handle big file sizes
            
 Test IDs:
 
-* `geojson_size_200m_load`        
-* `geojson_size_200m_display` 
+* `geojson_size_10m_load`        
+* `geojson_size_10m_display` 
+* `geojson_size_500m_load`        
+* `geojson_size_500m_display` 
 * `geojson_size_1000m_load`        
 * `geojson_size_1000m_display`   
 * `geojson_size_2000m_load`        
@@ -49,75 +77,21 @@ Test IDs:
 * `geojson_size_3000m_display`
 
 
+Test data:
+
+Administrative Units data for Germany - link to data provided in https://github.com/INSPIRE-MIF/2017.2/issues/20 - data model is not INSPIRE - file size 15353 KB
+
+* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AU_gemeindeverbaende_mecklenburg-vorpommern.json`
+
+Test expected outcome:
+
+* `116 features (Polygons) loaded and located in Germany`
+
 ### Geometry
 
-GeoJSON allows quite a wide variety of Geometry types. In this set of tests, we verify that clients can read the geometry and then style and and process it.
 
-#### Points
+Can the software load and display geometry collections?
 
-Can the software load and display Point geometries without any issues?
-
-Test IDs: 
-
-* `geojson_geometry_point_load`
-* `geojson_geometry_point_display`
-
-#### LineStrings
-
-Can the software load and display LineString geometries without any issues?
-
-Test IDs: 
-
-* `geojson_geometry_linestring_load`
-* `geojson_geometry_linestring_display`
-
-
-#### Polygons
-
-Can the software load and display Polygon geometries without any issues? 
-Are inner polgyon rings supported?
-What about Polygons with a very large number of points (> 10.000)?
-
-Test IDs: 
-
-* `geojson_geometry_polygon_load`
-* `geojson_geometry_polygon_display`
-* `geojson_geometry_polygon_inner_load`
-* `geojson_geometry_polygon_inner_display`
-* `geojson_geometry_polygon_large`
-
-#### MultiPoints
-
-Can the software load and display MultiPoint geometries without any issues? 
-Are the issues with very large numbers of Points in a MultiPoint Geometry?
-
-Test IDs: 
-
-* `geojson_geometry_multipoint_load`
-* `geojson_geometry_multipoint_display`
-* `geojson_geometry_multipoint_large`
-
-#### MultiLines
-
-Can the software load and display MultiLine geometries without any issues? 
-Are the issues with very large numbers of lines in a MultiLine Geometry?
-
-Test IDs: 
-
-* `geojson_geometry_multiline_load`
-* `geojson_geometry_multiline_display`
-* `geojson_geometry_multiline_large`
-
-#### MultiPolygons
-
-Can the software load and display MultiPolygon geometries without any issues? 
-Are the issues with very large numbers of polygons in a MultiPolygon Geometry?
-
-Test IDs: 
-
-* `geojson_geometry_multipolygon_load`
-* `geojson_geometry_multipolygon_display`
-* `geojson_geometry_multipolygon_large`
 
 #### Geometry Collections
 
@@ -128,26 +102,20 @@ Test IDs:
 * `geojson_geometry_geometrycollection_load`
 * `geojson_geometry_geometrycollection_display`
 
-#### Mixed-type Geometry Collections
-
-* `geojson_geometry_mixed_geometrycollection_load`
-* `geojson_geometry_mixed_geometrycollection_display`
+Test data:
+added a second position to the file https://github.com/INSPIRE-MIF/2017.2/blob/master/GeoJSON/ads/examples/ads_example_1.geojson
 
 
-#### 3D coordinates
+* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_2_geometryCollection.geojson`
 
-Can the software read and display geometries that use 3 ordinates per position?
+Test expected outcome:
 
-Test IDs: 
-
-* `geojson_geometry_3d_load`
-* `geojson_geometry_3d_display`
-
+* `two point geometries are displayed for the same address`
 
 
 ### Property Types
 
-These tests verify whether there are issues with certain property types, e.g. whether they can be used for styling. They check whether the property is read and can be used in styling and processing.
+These tests verify whether there are issues with certain property types e.g. can all array elements be displayed? 
 
 #### Boolean
 
@@ -162,9 +130,17 @@ Test IDs:
 * `geojson_property_boolean_style`
 * `geojson_property_boolean_processing`
 
-#### Array
+Test data:
 
-Does the software read and display a list of simple properties? 
+* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson`
+
+Test expected outcome:
+
+* `position_default content is shown`
+
+#### Arrays
+
+Does the software read and display a list of simple properties? Are there any limitations in the number of array elements?
 Can these be used in styling? 
 Can these be used in processing/analytic tools?
 
@@ -175,42 +151,33 @@ Test IDs:
 * `geojson_property_array_style`
 * `geojson_property_array_processing`
 
-####  Properties with complex data types 
+Test data:
 
-Does the software read and display a complex property?
-Can these be used in styling? 
-Can these be used in processing/analytic tools?
+* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson`
 
-Test IDs: 
+Test expected outcome:
 
-* `geojson_complex_property_load`
-* `geojson_complex_property_display`
-* `geojson_complex_property_style`
-* `geojson_complex_property_processing`
+* `all the array elements (10) are shown for 'timeStep' and 'result' with no information loss - they can be styled and used for further processing`
 
-#### References
+### Feature types
 
-Does the software support `$ref`, as defined in the [JSON Reference Draft](https://tools.ietf.org/html/draft-pbryan-zyp-json-ref-03)? Can the software resolve it?
+#### Multiple feature types
+when more feature types are present in the same file, is the software able to load and display maintaining the data structures and without any loss of information? 
 
 Test IDs: 
 
-* `geojson_property_ref_load`
-* `geojson_property_ref_display`
-* `geojson_property_ref_style`
-* `geojson_property_ref_processing`
+* `geojson_multiplefeaturetype_load`
+* `geojson_multiplefeaturetype_display`
 
-#### Additional Properies in `properties`
+Test data:
 
-GeoJSON does not specify the fields inside the `properties` member. In this test, we check whether the software can read and display such additional properties.
+* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson`
 
-Test IDs: 
+Test expected outcome:
 
-* `geojson_property_extraproperties_load`
-* `geojson_property_extraproperties_display`
-* `geojson_property_extraproperties_style`
-* `geojson_property_extraproperties_processing`
+* `two feature types (Environmental Monitoring Facility and PointTimeSeriesObservation) are loaded and displayed - their original structure is maintained without loss of information`
 
-#### Additional Properties in the Feature itself
+#### Additional Properties in the Feature type
 
 GeoJSON states that Features may have extra members and gives examples such as adding an `ID` field. In this test, we check whether the software can read and display such additional properties.
 
@@ -221,13 +188,14 @@ Test IDs:
 * `geojson_property_extrapropertiesfeature_style`
 * `geojson_property_extrapropertiesfeature_processing`
 
-#### Codelist Styling
+Test data:
 
-Does the software support styling based on codelist URL values?
+* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson`
 
-Test IDs: 
+Test expected outcome:
 
-* `geojson_property_styling_codelisturl`
+* `id property shown`
+
 
 ### Extensions
 
@@ -243,3 +211,12 @@ Test IDs:
 * `geojson_extension_crs_epsg4258`
 * `geojson_extension_crs_epsg3857`
 * `geojson_extension_crs_epsg25832`
+
+Test data:
+added a crs member to the file https://github.com/INSPIRE-MIF/2017.2/blob/master/GeoJSON/ads/examples/ads_example_1.geojson (and changed the coordinates)
+
+* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1_EPSG.3857.geojson`
+
+Test expected outcome:
+
+* `point placed in Darmstadt (DE)`
