@@ -1,6 +1,6 @@
 # Documentation of GML Tests
 This document describes the tests being performed to assess usability of INSPIRE data in GML encoding.
-To better support the works related to the alternative encodings for INSPIRE data and in agreement with the MIG 2017.2 group, test data belongs mostly to AD and EF data themes - is obtained from the the INSPIRE Geoportal or MIG 2017.2 github repository.
+To better support the works related to the alternative encodings for INSPIRE data and in agreement with the MIG 2017.2 group, test data belongs mostly to AD and EF data themes, is obtained from the the INSPIRE Geoportal or from MIG 2017.2 github repository.
 
 ## GML support
 
@@ -19,7 +19,7 @@ Test data:
 * `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml`
 
 Test expected outcome:
-the data is loaded and displays correctly in the map - dataset contains 5 features - No representative points available, so only one geometry per feature. 
+the data is loaded and displays in the map - dataset contains 5 features - No representative points (ef:representativePoint) available in this EF dataset, so  only one geometry per feature has to be displayed. 
 
 #### Download data from WFS
 
@@ -37,7 +37,7 @@ Test data:
 
 Test expected outcome:
 
-the data is loaded and displays correctly in the map - feature type to select from service is ef:EnvironmentalMonitoringFacility. 
+the data is loaded and displays in the map - feature type to select from service is ef:EnvironmentalMonitoringFacility. 
 
 #### Edit / create features
 
@@ -75,7 +75,7 @@ Test data:
 
 Test expected outcome:
 
-the data loads and displays correctly in the map. Data from Spain,downloaded from INSPIRE Geoportal, 67744 points.
+the data loads and displays in the map. Data from Spain,downloaded from INSPIRE Geoportal, 67744 points.
 
 ### Geometry
 
@@ -109,7 +109,7 @@ Test data:
 * `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml`
 
 Test expected outcome:
-both the polygons and point geometriesare displayed (10 features in total)
+both the polygons and point geometries are displayed (2 points + 8 polygons)
 
 #### multiple geometries
 
@@ -126,7 +126,7 @@ Test data:
 * `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_2.geom.gml` and `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_v4.0.two.geom.gml`
 
 Test expected outcome:
-multiple geometries in different properties (ef:representativePoint)and multiple occurrences of the same geometry property (ad:geographicPosition)load & display correctly
+multiple geometries in different properties (ef:representativePoint) and multiple occurrences of the same geometry property (ad:geographicPosition)load & display respectively in EMF.BRGM_2.geom.gml and AD.Spain_v4.0.two.geom.gml
 
 ### CRS
 
@@ -154,12 +154,13 @@ Test IDs:
 * `gml_geometry_3d_display`
 
 Test data:
+the EMF.BRGM_3.coord.gml file is used to test points. The PS file is used to test lines and polygons.
 
-* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_3.coord.gml,'https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml'` 
+* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_3.coord.gml,'https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry-srsDimension.gml'` 
 
 Test expected outcome:
 
-* `the EMF.BRGM_3.coord.gml file is used to test points. The PS file is used to test lines and polygons.`
+* `one point displayed for EMF dataset, 8 polygons and 2 points for PS dataset`
 
 ### Property Types
 
