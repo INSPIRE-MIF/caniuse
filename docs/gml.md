@@ -1,6 +1,9 @@
 # Documentation of GML Tests
-This document describes the tests being performed to assess usability of INSPIRE data in GML encoding.
-To better support the works related to the alternative encodings for INSPIRE data and in agreement with the MIG 2017.2 group, test data belongs mostly to AD and EF data themes, is obtained from the the INSPIRE Geoportal or from MIG 2017.2 github repository.
+This document describes the tests performed to assess usability of INSPIRE data in GML encoding in support of MIG Action 2017.3.
+Each test is characterised by a test ID, a description of the test purpose, a reference to test data used for assessment and test expected outcomes. 
+To better support the works related to the alternative encodings for INSPIRE data and in agreement with the MIG 2017.2 group, test data: 
+-belongs mostly to AD and EF data themes 
+-is discoved through the INSPIRE Geoportal or referenced in the MIG Action 2017.2 github repository.
 
 ## GML support
 
@@ -20,7 +23,7 @@ Test data:
 
 Test expected outcome:
 
-the data is loaded and displays in the map - dataset contains 5 features - No representative points (ef:representativePoint) available in this EF dataset, so  only one geometry per feature has to be displayed. 
+the data is loaded and displays in the map - dataset contains 5 features- structure is maintained and there is no loss of information. 
 
 #### Download data from WFS
 
@@ -34,11 +37,11 @@ Test IDs:
 
 Test data:
 
-* `https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef%3AEnvironmentalMonitoringFacility&count=100`
+* `https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef:EnvironmentalMonitoringFacility&count=100`
 
 Test expected outcome:
 
-the data is loaded and displays in the map - feature type to select from service is ef:EnvironmentalMonitoringFacility. 
+the data is loaded and displays in the map - service provides many feature type, for this test select ef:EnvironmentalMonitoringFacility. 
 
 #### Edit / create features
 
@@ -123,6 +126,7 @@ Test IDs:
 * `testID= gml_multiple_geometry_display`
 
 Test data:
+in order to test both the case of multiple geometries in different properties and the case of multiple occurrences of the same geometry property in a specific feature, two datasets were used:
 
 * `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_2.geom.gml` and `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_v4.0.two.geom.gml`
 
