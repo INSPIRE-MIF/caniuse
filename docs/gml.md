@@ -1,7 +1,7 @@
 # Documentation of GML Tests
-This document describes the tests performed to assess usability of INSPIRE data in GML encoding in support of MIG Action 2017.3.
-Each test is characterised by a test ID, a description of the test purpose, a reference to test data used for assessment and test expected outcomes. 
-To better support the works related to the alternative encodings for INSPIRE data and in agreement with the MIG 2017.2 group, test data: 
+This document describes the tests performed to assess the usability of INSPIRE data in the GML default encoding, in support of MIG Action 2017.3.
+Each test is characterised by a test ID, a description of the test purpose, a reference to test data used for the assessment and test expected outcomes. 
+To better support the works related to the alternative encodings for INSPIRE data and in agreement with the MIG Action 2017.2 group, test data: 
 -belongs mostly to AD and EF data themes 
 -is discoved through the INSPIRE Geoportal or referenced in the MIG Action 2017.2 github repository.
 
