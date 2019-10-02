@@ -19,7 +19,7 @@ Test IDs:
 
 Test data:
 
-* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml`
+* `[https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml]`
 
 Test expected outcome:
 
