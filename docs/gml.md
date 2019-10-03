@@ -19,11 +19,11 @@ Test IDs:
 
 Test data:
 
-* [BRGM test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml)
+* [BRGM EMF test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml)
 
 Test expected outcome:
 
-the data is loaded and displays in the map - dataset contains 5 features- structure is maintained and there is no loss of information. 
+the data is loaded and displayed in the map - structure is maintained and there is no loss of information. Note: the dataset contains 5 features 
 
 #### Download data from WFS
 
@@ -37,15 +37,15 @@ Test IDs:
 
 Test data:
 
-* `https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef:EnvironmentalMonitoringFacility&count=100`
+* [BRGM test WFS 2.0.0](https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef:EnvironmentalMonitoringFacility&count=100)
 
 Test expected outcome:
 
-the data is loaded and displays in the map - service provides many feature type, for this test select ef:EnvironmentalMonitoringFacility. 
+the data is loaded and displayed in the map - Note: the WFS serves many feature types, for this test select ef:EnvironmentalMonitoringFacility. 
 
 #### Edit / create features
 
-Test purpose: assess if the client can edit/create gml features.
+Test purpose: assess if the client can edit/create new features in a gml file
 
 Test IDs:   
 * `gml_features_edit`
@@ -53,7 +53,7 @@ Test IDs:
 
 Test data:
 
-* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml`
+* [BRGM EMF test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml)
 
 Test expected outcome:
 
@@ -75,28 +75,28 @@ Test IDs:
 
 Test data:
 
-* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ES.GFA.AD.gml`
+* [Spain AD test data - 288MB](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ES.GFA.AD.gml)
 
 Test expected outcome:
 
-the data loads and displays in the map. Data from Spain,downloaded from INSPIRE Geoportal, 67744 points.
+the data is loaded and displayed in the map. Note: the data set was downloaded from INSPIRE Geoportal - it contains 67744 features.
 
 ### Geometry
 
-Test purpose: assess if client can properly display geometries also in cases for which geometry field is nested in a complex data type  (e.g. AD data theme)
+Test purpose: assess if the client can properly display geometries nested in a complex data type  (e.g. AD data theme)
 
 Test IDs:
 
-* `gml_geometry_load`
-* `gml_geometry_display`
+* `gml_complex_data_type_geometry_load`
+* `gml_complex_data_type_geometry_display`
 
 Test data:
 
-* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml`
+* [Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml)
 
 Test expected outcome:
 
-* `one point is displayed`
+* `one point is displayed in the map`
 
 #### mixed-type geometry
 
@@ -110,15 +110,15 @@ Test IDs:
 
 Test data:
 
-* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml`
+*  [Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
 
 Test expected outcome:
-both the polygons and point geometries are displayed (2 points + 8 polygons)
+both the polygons and the point geometries are displayed (2 points + 8 polygons)
 
 #### multiple geometries
 
 Test purpose: 
-assess if the client can display multiple geometries in the same feature type. Tests will be performed both on examples of multiple geometries in different properties (e.g. ef:geometry and ef:representativePoint) and on examples of multiple occurrences of the same geometry property (e.g. ad:geographicPosition)
+assess if the client can display multiple geometries in the same feature type. The multiple geometries can be in different properties (e.g. <ef:geometry> and ef:representativePoint) or can be due to multiple occurrences of the same geometry property (e.g. ad:geographicPosition)
 
 Test IDs:
 
@@ -126,12 +126,12 @@ Test IDs:
 * `testID= gml_multiple_geometry_display`
 
 Test data:
-in order to test both the case of multiple geometries in different properties and the case of multiple occurrences of the same geometry property in a specific feature, two datasets were used:
+in order to test both the case of multiple geometries in different properties and the case of multiple occurrences of the same geometry property, two data sets are available:
 
-* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_2.geom.gml` and `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_v4.0.two.geom.gml`
+* [BRGM EMF test data - with representative points] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_2.geom.gml) and [Spain AD test data - with 2 ad:position elements](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_v4.0.two.geom.gml)
 
 Test expected outcome:
-multiple geometries in different properties (ef:representativePoint) and multiple occurrences of the same geometry property (ad:geographicPosition)load & display respectively in EMF.BRGM_2.geom.gml and AD.Spain_v4.0.two.geom.gml
+multiple geometries in different properties (ef:representativePoint) and multiple occurrences of the same geometry property (ad:geographicPosition)are loaded and displayed in the map. 
 
 ### CRS
 
@@ -143,7 +143,7 @@ Test IDs:
 
 Test data:
 
-* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml`
+* [Finland PS test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
 
 Test expected outcome:
 features are positioned in Finland.
@@ -151,7 +151,7 @@ features are positioned in Finland.
 
 ### 3D coordinates
 
-Test purpose: assess if the client read and display geometries that use 3 coordinates per position
+Test purpose: assess if the client read and display geometries that use 3 coordinates per position. Different data sets are used to test the point, the lines and the polygons 
 
 Test IDs:
 
@@ -161,7 +161,7 @@ Test IDs:
 Test data:
 the EMF.BRGM_3.coord.gml file is used to test points. The PS file is used to test lines and polygons.
 
-* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_3.coord.gml,'https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry-srsDimension.gml'` 
+* [BRGM EMF 3D test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_3.coord.gml) and [Finland 3D PS test data]  (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry-srsDimension.gml) 
 
 Test expected outcome:
 
@@ -187,7 +187,7 @@ Test IDs:
 
 Test data:
 
-* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml`
+* [Spain AD test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml)
 
 Test expected outcome:
 
@@ -209,7 +209,7 @@ Test IDs:
 
 Test data:
 
-* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml`
+* [Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml)
 
 Test expected outcome:
 
@@ -228,7 +228,7 @@ Test IDs:
 
 Test data:
 
-* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml`
+* [Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
 
 Test expected outcome:
 
@@ -252,7 +252,7 @@ Test IDs:
 
 Test data:
 
-* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry`
+* [Finland PS test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry)
 
 Test expected outcome:
 
@@ -268,7 +268,7 @@ Test IDs:
 
 Test data:
 
-* `https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml check both external (i.e. http) and internal (i.e. '#') references`
+* [Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml check both external (i.e. http) and internal (i.e. '#') references)
 
 Test expected outcome:
 
