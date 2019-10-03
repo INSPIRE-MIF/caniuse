@@ -231,7 +231,7 @@ Can these be used in processing/analytic tools?
 
 [Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml)
 
-*Test expected outcome:*
+***Test expected outcome:***
 
 3 <ad:component> elements are displayed
 
@@ -248,7 +248,7 @@ Can client load and display nillable properties and nilReason attributes?
 
 ***Test data:***
 
-[Finland PS test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
+[Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
 
 ***Test expected outcome:***
 
