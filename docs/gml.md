@@ -10,6 +10,7 @@ To better support the works related to the alternative encodings for INSPIRE dat
 #### Load data from file
 
 *Test purpose:* 
+
 assess if the client can load and display data from a .gml file
 
 *Test IDs:*
@@ -28,6 +29,7 @@ the data is loaded and displayed in the map - structure is maintained and there 
 #### Download data from WFS
 
 *Test purpose:*
+
 assess if the client can load and display data from a WFS 2.0.0   
 
 *Test IDs:*
