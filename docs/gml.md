@@ -88,6 +88,7 @@ the data is loaded and displayed in the map. Note: the data set was downloaded f
 ### Geometry
 
 *Test purpose:*
+
 assess if the client can properly display geometries nested in a complex data type  (e.g. AD data theme)
 
 *Test IDs:*
@@ -106,6 +107,7 @@ one point is displayed in the map
 #### mixed-type geometry
 
 *Test purpose:*
+
 assess if client can display data set containing mixed-type geometry (e.g. points and polygons)
 
 *Test IDs:*
@@ -118,11 +120,13 @@ assess if client can display data set containing mixed-type geometry (e.g. point
 [Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
 
 *Test expected outcome:*
+
 both the polygons and the point geometries are displayed (2 points + 8 polygons)
 
 #### multiple geometries
 
 *Test purpose:* 
+
 assess if the client can display multiple geometries in the same feature type. The multiple geometries can be in different properties (e.g. <ef:geometry> and ef:representativePoint) or can be due to multiple occurrences of the same geometry property (e.g. ad:geographicPosition)
 
 *Test IDs:*
@@ -131,17 +135,20 @@ assess if the client can display multiple geometries in the same feature type. T
 * `testID= gml_multiple_geometry_display`
 
 *Test data:*
+
 in order to test both the case of multiple geometries in different properties and the case of multiple occurrences of the same geometry property, two data sets are available:
 
 * [BRGM EMF test data - with representative points](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_2.geom.gml)
 * [Spain AD test data - with 2 ad:position elements](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_v4.0.two.geom.gml)
 
 *Test expected outcome:*
+
 multiple geometries in different properties (ef:representativePoint) and multiple occurrences of the same geometry property (ad:geographicPosition)are loaded and displayed in the map. 
 
 ### CRS
 
 *Test purpose:*
+
 assess if the client can interpret axis order correctly when the http encoding is used for the CRS (@srsName) 
 
 *Test IDs:*
@@ -159,6 +166,7 @@ features are positioned in Finland.
 ### 3D coordinates
 
 *Test purpose:*
+
 assess if the client read and display geometries that use 3 coordinates per position. Different data sets are used to test the point, the lines and the polygons 
 
 *Test IDs:*
@@ -167,6 +175,7 @@ assess if the client read and display geometries that use 3 coordinates per posi
 * `gml_geometry_3d_display`
 
 *Test data:*
+
 the EMF.BRGM_3.coord.gml file is used to test points. The PS file is used to test lines and polygons.
 
 * [BRGM EMF 3D test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_3.coord.gml)
