@@ -19,7 +19,7 @@ Test IDs:
 
 Test data:
 
-* [BRGM EMF test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml)
+[BRGM EMF test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml)
 
 Test expected outcome:
 
@@ -37,7 +37,7 @@ Test IDs:
 
 Test data:
 
-* [BRGM test WFS 2.0.0](https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef:EnvironmentalMonitoringFacility&count=100)
+[BRGM test WFS 2.0.0](https://wfspoc.brgm-rec.fr:443/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typenames=ef:EnvironmentalMonitoringFacility&count=100)
 
 Test expected outcome:
 
@@ -53,7 +53,7 @@ Test IDs:
 
 Test data:
 
-* [BRGM EMF test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml)
+[BRGM EMF test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml)
 
 Test expected outcome:
 
@@ -75,7 +75,7 @@ Test IDs:
 
 Test data:
 
-* [Spain AD test data - 288MB](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ES.GFA.AD.gml)
+[Spain AD test data - 288MB](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ES.GFA.AD.gml)
 
 Test expected outcome:
 
@@ -92,11 +92,11 @@ Test IDs:
 
 Test data:
 
-* [Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml)
+[Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml)
 
 Test expected outcome:
 
-* `one point is displayed in the map`
+`one point is displayed in the map`
 
 #### mixed-type geometry
 
@@ -110,7 +110,7 @@ Test IDs:
 
 Test data:
 
-*  [Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
+[Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
 
 Test expected outcome:
 both the polygons and the point geometries are displayed (2 points + 8 polygons)
@@ -144,7 +144,7 @@ Test IDs:
 
 Test data:
 
-* [Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
+[Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
 
 Test expected outcome:
 features are positioned in Finland.
@@ -167,7 +167,7 @@ the EMF.BRGM_3.coord.gml file is used to test points. The PS file is used to tes
 
 Test expected outcome:
 
-* `one point displayed for EMF dataset, 8 polygons and 2 points for PS dataset`
+one point displayed for EMF dataset, 8 polygons and 2 points for PS dataset
 
 ### Property Types
 
@@ -189,11 +189,11 @@ Test IDs:
 
 Test data:
 
-* [Spain AD test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml)
+[Spain AD test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml)
 
 Test expected outcome:
 
-* `complex properties are displayed correctly i.e. all subfields are visible. Focus e.g. on <ad:inspireId> and <ad:locator> and <ad:name>`
+complex properties are displayed correctly i.e. all subfields are visible. Focus e.g. on <ad:inspireId> and <ad:locator> and <ad:name>
 
 
 #### Properties with multiplicity >1
@@ -211,11 +211,11 @@ Test IDs:
 
 Test data:
 
-* [Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml)
+[Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml)
 
 Test expected outcome:
 
-* `3 <ad:component> elements are displayed`
+3 <ad:component> elements are displayed
 
 #### Nillable properties and nilReason attribute
 
@@ -230,11 +230,11 @@ Test IDs:
 
 Test data:
 
-* [Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
+[Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
 
 Test expected outcome:
 
-* `nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated" are displayed`
+nilReason="http://inspire.ec.europa.eu/codelist/VoidReasonValue/Unpopulated" are displayed
 
 ### Object references
 
@@ -254,11 +254,11 @@ Test IDs:
 
 Test data:
 
-* [Finland PS test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry)
+[Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry)
 
 Test expected outcome:
 
-* `<ps:designationScheme> and <ps:designation> elements are displayed correctly`
+<ps:designationScheme> and <ps:designation> elements are displayed correctly
 
 #### Resolve links
 
@@ -270,8 +270,8 @@ Test IDs:
 
 Test data:
 
-* [Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml) 
+[Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml) 
 
 Test expected outcome:
 
-* `codelists definitions are opened in the browser, referenced object description/ spatial object is returned`
+codelists definitions are opened in the browser, referenced object description/ spatial object is returned
