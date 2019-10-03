@@ -7,22 +7,22 @@ To better support the works related to the alternative encodings for INSPIRE dat
 
 ## GML support
 
-#### Load data from file
+### Load data from file
 
-*Test purpose:* 
+***Test purpose:*** 
 
-   assess if the client can load and display data from a .gml file
+assess if the client can load and display data from a .gml file
 
-*Test IDs:*
+*** Test IDs:*** 
 
 * `gml_file_load`
 * `gml_file_display`
 
-*Test data:*
+***Test data:*** 
 
 [BRGM EMF test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml)
 
-*Test expected outcome:*
+***Test expected outcome:*** 
 
 the data is loaded and displayed in the map - structure is maintained and there is no loss of information. Note: the dataset contains 5 features 
 
