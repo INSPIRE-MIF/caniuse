@@ -48,6 +48,7 @@ the data is loaded and displayed in the map - Note: the WFS serves many feature 
 ### Edit / create features
 
 ***Test purpose:***
+
 assess if the client can edit/create new features in a gml file
 
 ***Test IDs:***   
@@ -162,6 +163,7 @@ assess if the client can interpret axis order correctly when the http encoding i
 [Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
 
 ***Test expected outcome:***
+
 features are positioned in Finland.
 
 
