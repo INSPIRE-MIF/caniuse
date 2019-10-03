@@ -128,7 +128,8 @@ Test IDs:
 Test data:
 in order to test both the case of multiple geometries in different properties and the case of multiple occurrences of the same geometry property, two data sets are available:
 
-* [BRGM EMF test data - with representative points](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_2.geom.gml) and [Spain AD test data - with 2 ad:position elements](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_v4.0.two.geom.gml)
+* [BRGM EMF test data - with representative points](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_2.geom.gml)
+* [Spain AD test data - with 2 ad:position elements](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_v4.0.two.geom.gml)
 
 Test expected outcome:
 multiple geometries in different properties (ef:representativePoint) and multiple occurrences of the same geometry property (ad:geographicPosition)are loaded and displayed in the map. 
@@ -161,7 +162,8 @@ Test IDs:
 Test data:
 the EMF.BRGM_3.coord.gml file is used to test points. The PS file is used to test lines and polygons.
 
-* [BRGM EMF 3D test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_3.coord.gml) and [Finland 3D PS test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry-srsDimension.gml) 
+* [BRGM EMF 3D test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_3.coord.gml)
+* [Finland 3D PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry-srsDimension.gml) 
 
 Test expected outcome:
 
@@ -260,7 +262,7 @@ Test expected outcome:
 
 #### Resolve links
 
-Tests if the links can be resolved
+Tests if the links can be resolved either in the case they are external (i.e. http) or internal (i.e. '#') references
 
 Test IDs:
 
@@ -268,7 +270,7 @@ Test IDs:
 
 Test data:
 
-* [Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml check both external (i.e. http) and internal (i.e. '#') references)
+* [Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml) 
 
 Test expected outcome:
 
