@@ -1,6 +1,6 @@
 # Documentation of GeoJSON Tests
 
-This document describes the tests being performed to assess usability of INSPIRE data in GeoJSON encoding. 
+This document describes the tests performed to assess usability of INSPIRE data in GeoJSON encoding, in support of MIG Action 2017.3.  
 This test suite focuses on the outcomes of the Action 2017.2 on alternative encodings for INSPIRE data, more specifically on the GeoJSON Encoding Rule for INSPIRE Addresses (https://github.com/INSPIRE-MIF/2017.2/blob/master/GeoJSON/ads/simple-addresses.md) and GeoJSON Encoding Rule for INSPIRE Environmental Monitoring Facilities (https://github.com/INSPIRE-MIF/2017.2/blob/master/GeoJSON/efs/simple-environmental-monitoring-facilities.md)
 
 ## GeoJSON encoding support
