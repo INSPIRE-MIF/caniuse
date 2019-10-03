@@ -246,7 +246,7 @@ Can client load and display nillable properties and nilReason attributes?
 
 *Test data:*
 
-[Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
+[Finland PS test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml)
 
 *Test expected outcome:*
 
@@ -270,7 +270,7 @@ Can these be used in styling? Can these be used in processing/analytic tools? (e
 
 *Test data:*
 
-[Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry)
+[Finland PS test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry)
 
 *Test expected outcome:*
 
@@ -286,7 +286,7 @@ Tests if the links can be resolved either in the case they are external (i.e. ht
 
 *Test data:*
 
-[Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml) 
+[Spain AD test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml) 
 
 *Test expected outcome:*
 
