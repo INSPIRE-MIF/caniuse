@@ -9,7 +9,7 @@ This test suite focuses on the outcomes of the Action 2017.2 on alternative enco
 
 ***Test purpose:***
 
-Test if the client can load and display data from a .geojson file
+Assess if the client can load and display data from a .geojson file
 
 ***Test IDs:***
 
@@ -22,13 +22,13 @@ Test if the client can load and display data from a .geojson file
 
 ***Test expected outcome:***
 
-geojson file loads - one point displayed in the map - structure is maintained with no information loss
+GeoJSON file loads - one point is displayed in the map - data structure is maintained with no information loss
 
 ### Download data from WFS
 
 ***Test purpose:***
 
-Test if client can load and display geojson data from a WFS 
+Assess if client can load and display geojson data from a WFS 
 
 ***Test IDs:***
 
@@ -49,7 +49,7 @@ data loads with no errors and point geometries are located in the Netherlands
 
 ***Test purpose:***
 
-Test if client can edit/create geojson features
+Assess if client can edit/create geojson features
 
 ***Test IDs:***
 
@@ -68,7 +68,7 @@ geojson file can be successfully edited (edits saved) and new features can be ad
 
 ***Test purpose:***
 
-Test if the client handle big file sizes
+Assess if the client handle big file sizes
            
 ***Test IDs:***
 
@@ -99,7 +99,7 @@ Administrative Units data for Germany - link to data provided in https://github.
 
 ***Test purpose:***
 
-Can the software load and display Geometry Collections? 
+Assess if the software can load and display Geometry Collections 
 
 ***Test IDs:*** 
 
@@ -121,9 +121,9 @@ These tests verify whether there are issues with certain property types e.g. can
 
 ### Boolean
 
-Does the software read and display boolean values? 
-Can these be used in styling? 
-Can these be used in processing/analytic tools?
+***Test purpose:***
+
+Assess if the software can read and display boolean values - assess if these be used in styling and further processing
 
 ***Test IDs:*** 
 
@@ -142,9 +142,9 @@ position_default content is shown
 
 ### Arrays
 
-Does the software read and display a list of simple properties? Are there any limitations in the number of array elements?
-Can these be used in styling? 
-Can these be used in processing/analytic tools?
+***Test purpose:***
+
+Assess that the software can read and display a list of simple properties - Check if there are there any limitations in the number of array elements and that these can be used in styling and further processing
 
 ***Test IDs:*** 
 
@@ -165,7 +165,9 @@ all the array elements (10) are shown for 'timeStep' and 'result' with no inform
 
 ### Multiple feature types
 
-when more feature types are present in the same file, is the software able to load and display maintaining the data structures and without any loss of information? 
+***Test purpose:***
+
+assess that, when more feature types are present in the same file, the software is able to load and display those feature types maintaining the data structures and without any loss of information 
 
 ***Test IDs:*** 
 
@@ -182,7 +184,11 @@ two feature types (Environmental Monitoring Facility and PointTimeSeriesObservat
 
 ### Additional Properties in the Feature type
 
-GeoJSON states that Features may have extra members and gives examples such as adding an `ID` field. In this test, we check whether the software can read and display such additional properties.
+GeoJSON states that Features may have extra members and gives examples such as adding an `id` field. 
+
+***Test purpose:***
+
+assess whether the software can read and display 'id' additional property 
 
 ***Test IDs:*** 
 
@@ -206,7 +212,9 @@ There are some defined extensions for GeoJSON. In this section we summarize whet
 
 ### CRS
 
-Test what happens when using the optional CRS definition together with projected coordinates.
+***Test purpose:***
+
+assess client behaviour when using the optional CRS definition 
 
 ***Test IDs:*** 
 
