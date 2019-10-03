@@ -85,13 +85,13 @@ Test if the client handle big file sizes
 
 ***Test data:***
 
-Administrative Units data for Germany - link to data provided in https://github.com/INSPIRE-MIF/2017.2/issues/20 - data model is not INSPIRE - file size 15353 KB
+Administrative Units data for Germany - link to data provided in https://github.com/INSPIRE-MIF/2017.2/issues/20 - Data structure does not conform to GeoJSON Encoding Rule for INSPIRE - file size 15353 KB
 
 [AU German test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AU_gemeindeverbaende_mecklenburg-vorpommern.json)
 
 ***Test expected outcome:***
 
-* `116 features (Polygons) loaded and located in Germany`
+116 features (Polygons) loaded and located in Germany
 
 ## Geometry
 
@@ -112,7 +112,7 @@ Can the software load and display Geometry Collections?
 
 ***Test expected outcome:***
 
-* `two point geometries are displayed for the same address`
+two point geometries are displayed for the same address
 
 
 ## Property Types
@@ -159,7 +159,7 @@ Can these be used in processing/analytic tools?
 
 ***Test expected outcome:***
 
-* `all the array elements (10) are shown for 'timeStep' and 'result' with no information loss - they can be styled and used for further processing`
+all the array elements (10) are shown for 'timeStep' and 'result' with no information loss - they can be styled and used for further processing
 
 ## Feature types
 
@@ -178,7 +178,7 @@ when more feature types are present in the same file, is the software able to lo
 
 ***Test expected outcome:***
 
-* `two feature types (Environmental Monitoring Facility and PointTimeSeriesObservation) are loaded and displayed - their original structure is maintained without loss of information`
+two feature types (Environmental Monitoring Facility and PointTimeSeriesObservation) are loaded and displayed - their original structure is maintained without loss of information
 
 ### Additional Properties in the Feature type
 
