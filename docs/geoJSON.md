@@ -62,7 +62,7 @@ Assess if client can edit/create geojson features
 
 ***Test expected outcome:***
 
-geojson file can be successfully edited (edits saved) and new features can be added
+the GeoJSON file can be successfully edited and new features can be added
 
 ### File Size
 
@@ -138,13 +138,13 @@ Assess if the software can read and display boolean values - assess if these be 
 
 ***Test expected outcome:***
 
-position_default content is shown
+the content of the 'position_default' property is shown
 
 ### Arrays
 
 ***Test purpose:***
 
-Assess that the software can read and display a list of simple properties - Check if there are there any limitations in the number of array elements and that these can be used in styling and further processing
+Assess if the software can read and display a list of simple properties - Check if there are there any limitations in the number of array elements and that these can be used in styling and further processing
 
 ***Test IDs:*** 
 
