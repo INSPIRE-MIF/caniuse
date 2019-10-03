@@ -125,7 +125,7 @@ assess if client can display data set containing mixed-type geometry (e.g. point
 
 both the polygons and the point geometries are displayed (2 points + 8 polygons)
 
-#### multiple geometries
+### multiple geometries
 
 ***Test purpose:*** 
 
@@ -207,7 +207,7 @@ Can these be used in processing/analytic tools?
 
 ***Test data:***
 
-[Spain AD test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml)
+[Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml)
 
 ***Test expected outcome:***
 
@@ -235,7 +235,7 @@ Can these be used in processing/analytic tools?
 
 3 <ad:component> elements are displayed
 
-#### Nillable properties and nilReason attribute
+### Nillable properties and nilReason attribute
 
 Can client load and display nillable properties and nilReason attributes?
 
@@ -272,13 +272,13 @@ Can these be used in styling? Can these be used in processing/analytic tools? (e
 
 ***Test data:***
 
-[Finland PS test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry)
+[Finland PS test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry)
 
 ***Test expected outcome:***
 
 <ps:designationScheme> and <ps:designation> elements are displayed correctly
 
-#### Resolve links
+### Resolve links
 
 Tests if the links can be resolved either in the case they are external (i.e. http) or internal (i.e. '#') references
 
@@ -288,7 +288,7 @@ Tests if the links can be resolved either in the case they are external (i.e. ht
 
 ***Test data:***
 
-[Spain AD test data] (https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml) 
+[Spain AD test data](https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml) 
 
 ***Test expected outcome:***
 
