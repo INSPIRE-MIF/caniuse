@@ -12,7 +12,7 @@ To better support the works related to the alternative encodings for INSPIRE dat
 Test purpose: 
 assess if the client can load and display data from a .gml file
 
-Test IDs:
+*Test IDs:*
 
 * `gml_file_load`
 * `gml_file_display`
