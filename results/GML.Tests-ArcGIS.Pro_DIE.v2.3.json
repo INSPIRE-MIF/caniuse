@@ -55,13 +55,13 @@
             "gml_mixed_geometry_load": {
                 "result": "Supported",
                 "notes": "used with the Data Interoperability Extension",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml",
                 "dateOfTest": "2019-06-05"
             },
              "gml_mixed_geometry_display": {
                 "result": "Supported",
                 "notes": "used with the Data Interoperability Extension",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml",
                 "dateOfTest": ""
             },
             "gml_multiple_geometry_load": {
@@ -79,7 +79,7 @@
              "gml_crs_http_encoding": {
                 "result": "Supported",
                 "notes": "used with the Data Interoperability Extension",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml",
                 "dateOfTest": "2019-06-04"
             },
              "gml_geometry_3d_load": {

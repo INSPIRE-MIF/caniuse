@@ -54,13 +54,13 @@
    "gml_mixed_geometry_load": {
     "result": "Supported", 
     "notes": "None", 
-    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml", 
     "dateOfTest": "2019-07-09"
    }, 
    "gml_mixed_geometry_display": {
     "result": "Supported", 
     "notes": "None", 
-    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml", 
+    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml", 
     "dateOfTest": "2019-07-09"
    }, 
    "gml_multiple_geometry_load": {

@@ -68,13 +68,13 @@
             "gml_mixed_geometry_load": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml",
                 "dateOfTest": "2019-02-18"
             },
              "gml_mixed_geometry_display": {
                 "result": "Supported",
                 "notes": "both points and polygons are visible at the same time",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml",
                 "dateOfTest": "2019-02-18"
             },                        
             "gml_multiple_geometry_load": {
@@ -92,7 +92,7 @@
              "gml_crs_http_encoding": {
                 "result": "Supported",
                 "notes": "http://www.opengis.net/def/crs/EPSG/0/4258",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland.mixed.geometry.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml",
                 "dateOfTest": "2019-02-18"
             },
              "gml_geometry_3d_load": {
