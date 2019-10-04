@@ -86,7 +86,9 @@ assess if the client handle big file sizes
 
 ***Test expected outcome:***
 
-the data is loaded and displayed in the map. Note: the data set was downloaded from INSPIRE Geoportal - it contains 1000 features. Note: in the testcases folder of the caniuse repository, the zip file ad.address.gml.zip (340MB). It contains address data from Luxemburg downloaded from the geoportal and also used for testing client beheviour with big files. The GML file was too big for upload on gitHub, so it is provided as a zip archive.
+the data is loaded and displayed in the map. Note: the data set was downloaded from INSPIRE Geoportal - it contains 1000 features. 
+
+***Note:*** in the 'testcases' folder of the caniuse repository it is provided the zip file ad.address.gml.zip (340MB). It contains address data from Luxemburg downloaded from the INSPIRE Geoportal that was also used for testing client beheviour with big files. The GML file is too big for upload on gitHub, so it is provided as a zip archive.
 
 ## Geometry
 
