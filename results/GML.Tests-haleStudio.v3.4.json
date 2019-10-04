@@ -1,19 +1,19 @@
 {
     "software": "hale studio",
     "version": "3.4.1",
-    "notes":"the test aims to check the behaviour of HALE Studio on existing GML files - data are visible in the 'Data perspective' - geometries are displayed in the 'Map Perspective''",
+    "notes":"the test aims at verifying hale behaviour on existing gml files - data are visible in the 'Data perspective' - geometries are displayed in the 'Map Perspective''",
     "results": {
         "gml": {
             "gml_file_load": {
                 "result": "Supported",
-                "notes": "you have to import the dataset source schema first, then upload data from a gml instance",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "notes": "you have to import the dataset source schema first, then upload data from gml ",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml",
                 "dateOfTest": "2019-02-04"
             },
             "gml_file_display": {
                 "result": "Supported",
                 "notes": "Map perspective + Data perspective",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml",
                 "dateOfTest": "2019-02-04"
             },        
             "gml_WFS2_load": {
@@ -29,15 +29,15 @@
                 "dateOfTest": "2019-02-04"
             },            
 	        "gml_features_edit": {
-                "result": "Partially Supported",
-                "notes": "The gml file cannot be edited directly. A data transformation must be performed (source schema = target schema). Geometries cannot be edited in the map.",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "result": "Not Supported",
+                "notes": "the gml file cannot be edited directly. A data transformation must be performed (source schema = target schema). Geometries cannot be edited in the map.",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml",
                 "dateOfTest": "2019-02-04"
             },
             "gml_features_create": {
-                "result": "Partially Supported",
-                "notes": "New features can be added. Geometries anyway cannot be edited directly in HALE Studio and must be provided by other sources (e.g. importing another shapefile or calculated from geometries of already existing features).",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "result": "Not Supported",
+                "notes": "New features can be added only via data transformation (source schema = target schema). Geometries anyway cannot be added directly in hale and must be provided by other sources (e.g. importing another shapefile or calculated from geometries of already existing features)",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml",
                 "dateOfTest": "2019-02-04"
             },       
            "gml_size_200m_load": {
@@ -52,19 +52,18 @@
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ES.GFA.AD.gml",
                 "dateOfTest": "2019-02-04"
             },                        
-            "gml_geometry_load": {
+            "gml_complex_data_type_geometry_load": {
                 "result": "Supported",
-                "notes": "Also when geometries are 'hidden' in complex data types, such as the case of the AD theme, coordinates are shown in the data perspective.",
+                "notes": "the coordinates values are available in the data perspective",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
                 "dateOfTest": "2019-02-04"
             },
-             "gml_geometry_display": {
-                "result": "Partially supported",
-                "notes": "When geometries are 'hidden' in complex data types, such as the case of the AD theme, the geometries are not displayed on the map.",
+             "gml_complex_data_type_geometry_display": {
+                "result": "Not supported",
+                "notes": "geometries 'hidden' in complex data types are not displayed on the map",
                 "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
                 "dateOfTest": "2019-02-04"
-            },
-                                    
+            },                                  
             "gml_mixed_geometry_load": {
                 "result": "Supported",
                 "notes": "None",
@@ -79,14 +78,14 @@
             },                        
             "gml_multiple_geometry_load": {
                 "result": "Supported",
-                "notes": "e.g. representative points coordinates are shown in the 'Data perspective'",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "notes": "representative points coordinates are shown in the data perspective",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_2.geom.gml",
                 "dateOfTest": "2019-02-04"
             },
              "gml_multiple_geometry_display": {
                 "result": "Not Supported",
-                "notes": "e.g. representative points geometries are not shown in the 'Map perspective'",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "notes": "e.g. representative points geometries are not shown in the map perspective",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_2.geom.gml",
                 "dateOfTest": "2019-02-04"
             },
              "gml_crs_http_encoding": {
@@ -110,75 +109,123 @@
             "gml_complex_property_load": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
                 "dateOfTest": "2019-02-04"
             },
             "gml_complex_property_display": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
                 "dateOfTest": "2019-02-04"
             },
             "gml_complex_property_style": {
                 "result": "Not Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
                 "dateOfTest": "2019-02-04"
             },
              "gml_complex_property_processing": {
                 "result": "Not Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
                 "dateOfTest": "2019-02-04"
             },
             "gml_multiple_occurrences_load": {
                 "result": "Supported",
-                "notes": "e.g. ef:hasObservation, ef:belongTo",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml",
                 "dateOfTest": "2019-02-04"
             },
            "gml_multiple_occurrences_display": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml",
                 "dateOfTest": "2019-02-04"
             },
          "gml_multiple_occurrences_style": {
                 "result": "Not Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml",
                 "dateOfTest": "2019-02-04"
             },
              "gml_multiple_occurrences_processing": {
                 "result": "Not Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml",
                 "dateOfTest": "2019-02-04"
             }, 
              "gml_xnil_load": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
                 "dateOfTest": "2019-02-04"
             },
            "gml_xnil_display": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
                 "dateOfTest": "2019-02-04"
             },
              "gml_nilreason_load": {
                 "result": "Supported",
                 "notes": " None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
                 "dateOfTest": "2019-02-04"
             },
            "gml_nilreason_display": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
                 "dateOfTest": "2019-02-04"
+            },            
+              "gml_xlink_href_load": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
+                "dateOfTest": "2019-07-15"
             },
+           "gml_xlink_href_display": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
+                "dateOfTest": "2019-07-15"
+            },
+             "gml_xlink_href_style": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
+                "dateOfTest": "2019-07-15"
+            },
+           "gml_xlink_href_processing": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AD.Spain_full.gml",
+                "dateOfTest": "2019-07-15"
+            },   
+            "gml_xlink_title_load": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml",
+                "dateOfTest": "2019-07-15"
+            },
+             "gml_xlink_title_display": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml",
+                "dateOfTest": "2019-07-15"
+            },
+             "gml_xlink_title_style": {
+                "result": "Not Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml",
+                "dateOfTest": "2019-07-15"
+            },
+           "gml_xlink_title_processing": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/PS.Finland_mixed.geometry.gml",
+                "dateOfTest": "2019-07-15"
+            },                          
              "gml_xlinks_resolve": {
                 "result": "Not Supported",
                 "notes": "None",

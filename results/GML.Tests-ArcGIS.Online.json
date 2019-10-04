@@ -1,19 +1,19 @@
 {
     "software": "ArcGIS Online",
     "version": "December 2018 release",
-    "notes":"None",
+    "notes":"GML 3.2.1 not supported",
     "results": {
         "gml": {
             "gml_file_load": {
                 "result": "Not Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml",
                 "dateOfTest": "2019-02-05"
             },
             "gml_file_display": {
                 "result": "Not Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM.data.gml",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/EMF.BRGM_1.geom.gml",
                 "dateOfTest": "2019-02-05"
             },        
             "gml_WFS2_load": {
