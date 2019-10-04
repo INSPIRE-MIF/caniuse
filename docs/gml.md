@@ -290,7 +290,7 @@ it is possible to load/ display/ style/ further process the 'xlink:href' and 'xl
 
 ***Test purpose:***
 
-Tests if the 'xlink:href' links can be resolved both for external (i.e. http) and internal (i.e. '#') references
+Verify that the 'xlink:href' links can be resolved both for external (i.e. http) and internal (i.e. '#') references
 
 ***Test IDs:***
 
