@@ -1,0 +1,49 @@
+{  
+    "type":"FeatureCollection",
+    "features":[ 
+         {
+             "type": "Feature",
+             "id": "Address_1",
+             "geometry": {
+                 "type": "GeometryCollection",
+      "geometries": [
+          {
+            "type": "Point",
+                "coordinates": [
+                    8.6572813,
+                    49.87437
+                ]},
+            {
+            "type": "Point",
+                "coordinates": [
+                    8.6872813,
+                    49.87597
+                ]}]
+             },
+             "properties": {
+                 "inspireId_localId": "Address_1",
+                 "inspireId_namespace": "https://github.com/INSPIRE-MIF/2017.2/GeoJSON/ads/examples/",
+                 "position_specification": "parcel",
+                 "position_specification_href": "http://inspire.ec.europa.eu/codelist/GeometrySpecificationValue/parcel",
+                 "position_method": "fromFeature",
+                 "position_method_href": "http://inspire.ec.europa.eu/codelist/GeometryMethodValue/fromFeature",
+                 "position_default": true,
+                 "position_specification_1": "postalDelivery",
+                 "position_specification_1_href": "http://inspire.ec.europa.eu/codelist/GeometrySpecificationValue/postalDelivery",
+                 "position_method_1": "fromFeature",
+                 "position_method_1_href": "http://inspire.ec.europa.eu/codelist/GeometryMethodValue/fromFeature",
+                 "position_default_1": false,
+                 "locator_designator_addressNumber": "5",
+                 "locator_designator_addressNumberExtension": "A",
+                 "locator_level": "siteLevel",
+                 "locator_level_href": "http://inspire.ec.europa.eu/codelist/LocatorLevelValue/siteLevel",
+                 "component_ThoroughfareName": "Fraunhoferstraße",
+                 "component_PostalDescriptor": "64283",
+                 "component_AddressAreaName": "Innenstadt",
+                 "component_AdminUnitName_1": "Deutschland",
+                 "component_AdminUnitName_2": "Hessen",
+                 "component_AdminUnitName_3": "Darmstadt"
+             }
+         }
+    ]
+ }
