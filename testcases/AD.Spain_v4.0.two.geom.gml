@@ -24,25 +24,37 @@
                     <base:namespace>ES.SDGC.AD</base:namespace>
                 </base:Identifier>
             </ad:inspireId>
-           
-            
-            
+                      
             <ad:position>
                 <ad:GeographicPosition>
                     <ad:geometry>
                         <gml:Point gml:id="ES.SDGC.AD.28.900.2128.16.2006624VK4820E_P"
-                            srsName="urn:ogc:def:crs:EPSG::25830">
-                            <gml:pos>441964.1775 4480451.104</gml:pos>
+                            srsName="http://www.opengis.net/def/crs/EPSG/0/25830">
+                            <gml:pos>441964.1775 4480451.304</gml:pos>
                         </gml:Point>
                     </ad:geometry>
                     <ad:specification
-                        xlink:href="http://inspire.ec.europa.eu/codelist/GeometrySpecificationValue/entrance" xlink:title="entrance"/>
+                        xlink:href="http://inspire.ec.europa.eu/codelist/GeometrySpecificationValue/entrance"/>
                     <ad:method
                         xlink:href="http://inspire.ec.europa.eu/codelist/GeometryMethodValue/byAdministrator"/>
                     <ad:default>true</ad:default>
                 </ad:GeographicPosition>
             </ad:position>    
-                       
+            
+            <ad:position>
+                <ad:GeographicPosition>
+                    <ad:geometry>
+                        <gml:Point gml:id="ES.SDGC.AD.28.900.2128.16.2006624VK4820E_P2" srsName="http://www.opengis.net/def/crs/EPSG/0/25830">
+                            <gml:pos>441964.1775 4480451.104</gml:pos> 
+                        </gml:Point>
+                    </ad:geometry>
+                    <ad:specification
+                        xlink:href="http://inspire.ec.europa.eu/codelist/GeometrySpecificationValue/building"/>
+                    <ad:method
+                        xlink:href="http://inspire.ec.europa.eu/codelist/GeometryMethodValue/byAdministrator"/>
+                    <ad:default>false</ad:default>
+                </ad:GeographicPosition>
+            </ad:position>
             
             <ad:locator>
                 <ad:AddressLocator>
