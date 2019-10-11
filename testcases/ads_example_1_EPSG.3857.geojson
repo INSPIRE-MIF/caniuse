@@ -1,0 +1,39 @@
+{  
+    "type":"FeatureCollection",
+	"crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::3857"
+    }
+  },
+	
+    "features":[ 
+         {
+             "type": "Feature",
+             "id": "Address_1",
+             "geometry": {
+                 "type": "Point",
+                 "coordinates": [ 964373.15, 6424547.30 ]
+             },
+             "properties": {
+                 "inspireId_localId": "Address_1",
+                 "inspireId_namespace": "https://github.com/INSPIRE-MIF/2017.2/GeoJSON/ads/examples/",
+                 "position_specification": "parcel",
+                 "position_specification_href": "http://inspire.ec.europa.eu/codelist/GeometrySpecificationValue/parcel",
+                 "position_method": "fromFeature",
+                 "position_method_href": "http://inspire.ec.europa.eu/codelist/GeometryMethodValue/fromFeature",
+                 "position_default": true,
+                 "locator_designator_addressNumber": "5",
+                 "locator_designator_addressNumberExtension": "A",
+                 "locator_level": "siteLevel",
+                 "locator_level_href": "http://inspire.ec.europa.eu/codelist/LocatorLevelValue/siteLevel",
+                 "component_ThoroughfareName": "Fraunhoferstraße",
+                 "component_PostalDescriptor": "64283",
+                 "component_AddressAreaName": "Innenstadt",
+                 "component_AdminUnitName_1": "Deutschland",
+                 "component_AdminUnitName_2": "Hessen",
+                 "component_AdminUnitName_3": "Darmstadt"
+             }
+         }
+    ]
+ }

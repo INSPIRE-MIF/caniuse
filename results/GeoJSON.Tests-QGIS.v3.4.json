@@ -7,111 +7,129 @@
             "geojson_file_load": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson.geojson",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_1.geojson",
                 "dateOfTest": "2019-05-06"
             },
             "geojson_file_display": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_1.geojson",
                 "dateOfTest": "2019-05-06"
-            },                
+            },  
+			"geojson_WFS_load": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://geodata.nationaalgeoregister.nl/bag/wfs?request=GetFeature&service=WFS&typeName=bag:verblijfsobject&outputFormat=json&srsName=EPSG:4326&count=200&version=2.0.0",
+                "dateOfTest": "2019-05-06"
+            },
+            "geojson_WFS_display": {
+                "result": "Supported",
+                "notes": "Service provides Dutch address data - Data structure does not conform to GeoJSON Encoding Rule for INSPIRE Addresses",
+                "dataUsed": "https://geodata.nationaalgeoregister.nl/bag/wfs?request=GetFeature&service=WFS&typeName=bag:verblijfsobject&outputFormat=json&srsName=EPSG:4326&count=200&version=2.0.0",
+                "dateOfTest": "2019-05-06"
+            },                			
 	        "geojson_features_edit": {
                 "result": "Partially Supported",
-                "notes": "Issue seems to be specific to Windows environment,https://issues.qgis.org/issues/20760",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson.geojson",
+                "notes": "Issue specific to Windows environment, https://github.com/qgis/QGIS/issues/28580, has been fixed",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_1.geojson",
                 "dateOfTest": "2019-05-06"
             },
             "geojson_features_create": {
                 "result": "Partially Supported",
-                "notes": "Issue seems to be specific to Windows environment,https://issues.qgis.org/issues/20760",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson.geojson",
-                "dateOfTest": "2019-05-06"
+                "notes": "Issue specific to Windows environment, https://github.com/qgis/QGIS/issues/28580, has been fixed",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_1.geojson",
+                "dateOfTest": "2019-09-26"
             },                              
-            "geojson_geometry_point_load": {
+            "geojson_size_10m_load": {
                 "result": "Supported",
-                "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson.geojson",
+                "notes": "file size 15353 KB",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AU_gemeindeverbaende_mecklenburg-vorpommern.json",
                 "dateOfTest": "2019-05-06"
             },
-             "geojson_geometry_point_display": {
+             "geojson_size_10m_display": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson.geojson",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/AU_gemeindeverbaende_mecklenburg-vorpommern.json",
                 "dateOfTest": "2019-05-06"
             },                        
             "geojson_geometry_geometrycollection_load": {
                 "result": "Supported",
-                "notes": "values of the properties are shown in the attribute table",
-		        "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson-2geographicPositions.geojson",
+                "notes": "loads with no error messages",
+		        "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_2_geometryCollection.geojson",
                 "dateOfTest": "2019-05-06"
             },
              "geojson_geometry_geometrycollection_display": {
                 "result": "Not Supported",
-                "notes": "Geometries are not displayed on the map",
-		        "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson-2geographicPositions.geojson",
+                "notes": "Geometries are not displayed on the map (but values of the properties are shown in the attribute table)",
+		        "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_2_geometryCollection.geojson",
                 "dateOfTest": "2019-05-06"
-            },
-             "geojson_geometry_3d_load": {
-                "result": "Supported",
-                "notes": "only tested for points",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1-3D.geojson.geojson",
-                "dateOfTest": "2019-05-06"
-            },
-             "geojson_geometry_3d_display": {
-                "result": "Supported",
-                "notes": "only tested for points",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1-3D.geojson.geojson",
-                "dateOfTest": "2019-05-06"
-            },                      
+            },              
             "geojson_property_boolean_load": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson.geojson",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson",
                 "dateOfTest": "2019-05-06"
             },
             "geojson_property_boolean_display": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson.geojson",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson",
                 "dateOfTest": "2019-05-06"
             },
             "geojson_property_boolean_style": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson.geojson",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson",
                 "dateOfTest": "2019-05-06"
             },
              "geojson_property_boolean_processing": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson.geojson",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson",
                 "dateOfTest": "2019-05-06"
             },                     
             "geojson_property_array_load": {
                 "result": "Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/efs_example_2_more.timeseries.results.geojson",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/efs_example_2.geojson",
                 "dateOfTest": "2019-05-06"
             },
             "geojson_property_array_display": {
                  "result": "Partially Supported",
-                "notes": "there are limitations in the number of array elements that can be displayed",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson",
+                "notes": "there are limitations in the number of array elements that are displayed",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson",
                 "dateOfTest": "2019-05-06"
             },
             "geojson_property_array_style": {
                 "result": "Not Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson",
                 "dateOfTest": "2019-05-06"
             },
              "geojson_property_array_processing": {
                 "result": "Not Supported",
                 "notes": "None",
-                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson",
                 "dateOfTest": "2019-05-06"
-            }
+            },
+			"geojson_multiplefeaturetype_load": {
+                "result": "Supported",
+                "notes": "the different features are loaded",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example2.geojson",
+                "dateOfTest": "2019-05-06" 
+                },
+            "geojson_multiplefeaturetype_display": {
+                "result": "Not Supported",
+                "notes": "properties of the different features are appended",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson",
+                "dateOfTest": "2019-05-06"
+            }, 
+			"geojson_extension_crs_epsg3857": {
+                "result": "Supported",
+                "notes": "None",
+                "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson",
+                "dateOfTest": "2019-05-06"
+            }			
             
         }
     }

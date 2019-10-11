@@ -1,42 +1,31 @@
 {
  "software": "GRASS GIS", 
  "version": "7.7.svn", 
+ "notes": "None",
  "results": {
   "geojson": {
    "geojson_file_load": {
-    "result": "Partially supported", 
+    "result": "Partially Supported", 
     "notes": "Problem creating sqlite attribute table, it works with v.external", 
     "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson.geojson", 
     "dateOfTest": "2019-07-09"
    }, 
    "geojson_file_display": {
-    "result": "Partially supported", 
+    "result": "Partially Supported", 
     "notes": "Problem creating sqlite attribute table, it works with v.external", 
     "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson", 
     "dateOfTest": "2019-07-09"
    }, 
    "geojson_file_edit": {
-    "result": "Non tested", 
+    "result": "Not Tested", 
     "notes": "None", 
     "dataUsed": "", 
     "dateOfTest": "2019-07-09"
    }, 
    "geojson_file_create": {
-    "result": "Non tested", 
+    "result": "Not Tested", 
     "notes": "None", 
     "dataUsed": "", 
-    "dateOfTest": "2019-07-09"
-   }, 
-   "geojson_geometry_point_load": {
-    "result": "Partially supported", 
-    "notes": "Problem creating sqlite attribute table, it works with v.external", 
-    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2.geojson.geojson", 
-    "dateOfTest": "2019-07-09"
-   }, 
-   "geojson_geometry_point_display": {
-    "result": "Partially supported", 
-    "notes": "Problem creating sqlite attribute table, it works with v.external", 
-    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson", 
     "dateOfTest": "2019-07-09"
    }, 
    "geojson_geometry_geometrycollection_load": {
@@ -49,18 +38,6 @@
     "result": "Supported", 
     "notes": "None", 
     "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1.geojson-2geographicPositions.geojson", 
-    "dateOfTest": "2019-07-09"
-   }, 
-   "geojson_geometry_3d_load": {
-    "result": "Supported", 
-    "notes": "None", 
-    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1-3D.geojson.geojson", 
-    "dateOfTest": "2019-07-09"
-   }, 
-   "geojson_geometry_3d_display": {
-    "result": "Supported", 
-    "notes": "None", 
-    "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/ads_example_1-3D.geojson.geojson", 
     "dateOfTest": "2019-07-09"
    }, 
    "geojson_property_boolean_load": {
@@ -76,37 +53,37 @@
     "dateOfTest": "2019-07-09"
    }, 
    "geojson_property_boolean_style": {
-    "result": "Non tested", 
+    "result": "Not Tested", 
     "notes": "None", 
     "dataUsed": "", 
     "dateOfTest": "2019-07-09"
    }, 
    "geojson_property_boolean_processing": {
-    "result": "Non tested", 
+    "result": "Not Tested", 
     "notes": "None", 
     "dataUsed": "", 
     "dateOfTest": "2019-07-09"
    }, 
    "geojson_property_array_load": {
-    "result": "Non supported", 
+    "result": "Not Supported", 
     "notes": "None", 
     "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson", 
     "dateOfTest": "2019-07-09"
    }, 
    "geojson_property_array_display": {
-    "result": "Non supported", 
+    "result": "Not Supported", 
     "notes": "None", 
     "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson", 
     "dateOfTest": "2019-07-09"
    }, 
    "geojson_property_array_style": {
-    "result": "Non supported", 
+    "result": "Not Supported", 
     "notes": "None", 
     "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson", 
     "dateOfTest": "2019-07-09"
    }, 
    "geojson_property_array_processing": {
-    "result": "Non supported", 
+    "result": "Not Supported", 
     "notes": "None", 
     "dataUsed": "https://raw.githubusercontent.com/INSPIRE-MIF/caniuse/master/testcases/efs_example_2_more.timeseries.results.geojson", 
     "dateOfTest": "2019-07-09"
